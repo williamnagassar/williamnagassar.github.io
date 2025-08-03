@@ -13,6 +13,7 @@
       color: #222;
       background: #fdfdfd;
     }
+
     nav {
       background: #2f343a;
       padding: 1em;
@@ -21,6 +22,7 @@
       top: 0;
       z-index: 1000;
     }
+
     nav a {
       margin: 0 1em;
       text-decoration: none;
@@ -28,28 +30,72 @@
       font-weight: 400;
       transition: color 0.2s ease;
     }
+
     nav a.active {
       color: white;
       font-weight: 600;
     }
+
     nav a:hover {
       color: #fff;
       text-decoration: none;
     }
+
     header {
       text-align: center;
       padding: 4em 1em;
     }
+
     section {
       max-width: 700px;
       margin: 2em auto;
       padding: 0 1em;
     }
+
     h1, h2 {
       font-weight: 600;
     }
-    .project {
-      margin-bottom: 1.5em;
+
+    /* Project Card Styles */
+    .project-card {
+      border: 1px solid #ccc;
+      padding: 1.5em;
+      margin-bottom: 2em;
+      border-radius: 6px;
+      background-color: #fff;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-image {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 1em;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      font-size: 1.25em;
+    }
+
+    .project-card p {
+      margin-bottom: 1em;
+    }
+
+    .read-more {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .read-more:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
@@ -75,16 +121,27 @@
 
 <section id="projects">
   <h2>Projects</h2>
-  <div class="project">
-    <strong>Exoskeleton Arm Design</strong><br/>
-    Led a team to design and prototype a motorized exoskeleton using syringes for actuation. <br/>
-    <a href="https://github.com/williamnagassar/EXOSKELETON-PROJECT" target="_blank">GitHub Repo</a>
+
+  <!-- Exoskeleton Project -->
+  <div class="project-card">
+    <img src="exoskeleton-project.png" alt="Exoskeleton overview" class="project-image" />
+    <h3>Design and Prototyping of a Syringe-Actuated Exoskeleton Arm</h3>
+    <p>
+      As part of a university team project, I led the design and fabrication of a motorless exoskeleton arm that used syringes and elastic return for assisted curling motion. The system was designed to enhance arm movement using inexpensive materials, integrating mechanical advantage through jointed levers and lightweight 3D-printed components.
+    </p>
+    <a class="read-more" href="exoskeleton-details.pdf" target="_blank">Read More →</a>
   </div>
-  <div class="project">
-    <strong>High-Power Rocket Jet Vane Control</strong><br/>
-    Designed vectoring fins for a student-built high-power rocket using jet vanes. <br/>
-    <a href="https://github.com/williamnagassar/ROCKET-PROJECT" target="_blank">GitHub Repo</a>
+
+  <!-- Jet Vane Project -->
+  <div class="project-card">
+    <img src="rocket-jet-vane.png" alt="Rocket control system" class="project-image" />
+    <h3>Jet Vane Thrust Vector Control for High-Power Rocketry</h3>
+    <p>
+      I developed a jet vane thrust vectoring mechanism to steer a high-power solid rocket using servo-actuated carbon-fiber vanes positioned in the exhaust stream. The system allows for directional control during vertical ascent, and includes aerodynamic and thermal shielding considerations for high-temperature plume exposure.
+    </p>
+    <a class="read-more" href="rocket-jet-vane.pdf" target="_blank">Read More →</a>
   </div>
+
 </section>
 
 </body>
