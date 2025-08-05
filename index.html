@@ -141,12 +141,17 @@
       border-color: #ff6a00;
     }
 
-    .mini-card .thumb {
-      width: 100%;
+    .thumb-row {
+      display: flex;
+      gap: 0.75em;
+      margin-bottom: 0.75em;
+    }
+
+    .thumb-row .thumb {
+      flex: 1;
       height: 220px;
       object-fit: contain;
       border-radius: 4px;
-      margin-bottom: 0.75em;
       background: #eee; /* shows a neutral block if image not uploaded yet */
     }
 
@@ -221,44 +226,54 @@
     <div class="mini-grid">
       <!-- Phone Stand -->
       <div class="mini-card">
-        <img src="phonestand.png" alt="CAD model of phone stand" class="thumb" />
-        <img src="phonestand1.png" alt="Alternate angle of phone stand" class="thumb" />
+        <div class="thumb-row">
+          <img src="phonestand.png" alt="CAD model of phone stand" class="thumb" />
+          <img src="phonestand1.png" alt="Alternate angle of phone stand" class="thumb" />
+        </div>
         <h4>Compact 3D‑Printed Phone Stand</h4>
         <p>Pocketable, two-angle stand with cable pass-through and stable base.</p>
       </div>
 
     <!-- Katana Holder -->
     <div class="mini-card">
-      <img src="katana.png" alt="CAD model of katana holder" class="thumb" />
-      <img src="katana1.png" alt="Mounted katana holder" class="thumb" />
-      <img src="katana2.png" alt="Katana holder detail" class="thumb" />
+      <div class="thumb-row">
+        <img src="katana.png" alt="CAD model of katana holder" class="thumb" />
+        <img src="katana1.png" alt="Mounted katana holder" class="thumb" />
+        <img src="katana2.png" alt="Katana holder detail" class="thumb" />
+      </div>
       <h4>Wall‑Mounted Katana Holder</h4>
       <p>Parametric mounts with felt-lined saddles and concealed fasteners.</p>
     </div>
 
     <!-- Perfume Mat & Holder -->
     <div class="mini-card">
-      <img src="perfume.png" alt="CAD model of perfume mat" class="thumb" />
-      <img src="perfume1.png" alt="Perfume holder angled view" class="thumb" />
-      <img src="perfume2.png" alt="Perfume holder top view" class="thumb" />
+      <div class="thumb-row">
+        <img src="perfume.png" alt="CAD model of perfume mat" class="thumb" />
+        <img src="perfume1.png" alt="Perfume holder angled view" class="thumb" />
+        <img src="perfume2.png" alt="Perfume holder top view" class="thumb" />
+      </div>
       <h4>Perfume Mat & Display Holder</h4>
       <p>Non-slip tray with modular bottle docks and drip containment lip.</p>
     </div>
 
     <!-- Pill Bottle with Threaded Cap -->
     <div class="mini-card">
-      <img src="bottle.png" alt="Pill bottle render" class="thumb" />
-      <img src="cap.png" alt="Threaded cap render" class="thumb" />
-      <video src="threadcap.mov" class="thumb" autoplay loop muted playsinline oncontextmenu="return false;" controlsList="nodownload"></video>
+      <div class="thumb-row">
+        <img src="bottle.png" alt="Pill bottle render" class="thumb" />
+        <img src="cap.png" alt="Threaded cap render" class="thumb" />
+        <video src="threadcap.mov" class="thumb" autoplay loop muted playsinline oncontextmenu="return false;" controlsList="nodownload"></video>
+      </div>
       <h4>Pill Bottle with Threaded Cap</h4>
       <p>Print‑in‑place threads, knurled cap, and gasket groove for sealing.</p>
     </div>
 
     <!-- iPhone Wall Mount -->
     <div class="mini-card">
-      <img src="wallmount.png" alt="CAD model of iPhone wall mount" class="thumb" />
-      <img src="wallmount1.png" alt="Wall mount in use" class="thumb" />
-      <img src="wallmount2.png" alt="Wall mount perspective view" class="thumb" />
+      <div class="thumb-row">
+        <img src="wallmount.png" alt="CAD model of iPhone wall mount" class="thumb" />
+        <img src="wallmount1.png" alt="Wall mount in use" class="thumb" />
+        <img src="wallmount2.png" alt="Wall mount perspective view" class="thumb" />
+      </div>
       <h4>iPhone Wall Mount (Video Calling)</h4>
       <p>Orientation‑locking mount with soft inserts and hidden cable routing.</p>
     </div>
