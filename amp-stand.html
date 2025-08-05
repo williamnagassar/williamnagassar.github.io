@@ -77,7 +77,7 @@
       top: 0;
       left: 0;
       opacity: 0;
-      animation: ampTurn 8s infinite;
+      transition: opacity 0.3s ease;
       margin: 0;
     }
 
@@ -85,17 +85,8 @@
       position: relative;
     }
 
-    .amp-rotation img:nth-child(1) { animation-delay: 0s; }
-    .amp-rotation img:nth-child(2) { animation-delay: 2s; }
-    .amp-rotation img:nth-child(3) { animation-delay: 4s; }
-    .amp-rotation img:nth-child(4) { animation-delay: 6s; }
-
-    @keyframes ampTurn {
-      0% { opacity: 0; }
-      5% { opacity: 1; }
-      25% { opacity: 1; }
-      30% { opacity: 0; }
-      100% { opacity: 0; }
+    .amp-rotation img.active {
+      opacity: 1;
     }
 
     .back {
@@ -164,5 +155,29 @@
 
     <a class="back" href="index.html">← Back to portfolio</a>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const frames = Array.from(document.querySelectorAll('.amp-rotation img'));
+      let index = 0;
+      let direction = 1;
+      const interval = 1000; // 1 second per frame for a quicker rotation
+
+      frames[index].classList.add('active');
+
+      setInterval(() => {
+        frames[index].classList.remove('active');
+
+        if (index === frames.length - 1) {
+          direction = -1;
+        } else if (index === 0) {
+          direction = 1;
+        }
+
+        index += direction;
+        frames[index].classList.add('active');
+      }, interval);
+    });
+  </script>
 </body>
 </html>
