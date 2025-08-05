@@ -5,42 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>3D‑Printed Rotatable Amp Stand</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 800px; margin: 2em auto; padding: 1em; line-height: 1.6; color:#222; }
-    a { color: #007bff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    img { max-width: 100%; height: auto; border-radius: 4px; margin: 1em 0; }
-    .back { display:inline-block; margin-top: 1.5em; }
-    h1 { margin-bottom: 0.4em; }
-    .meta { color:#666; font-size:0.95em; margin-bottom:1em; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    nav {
+      background: #2f343a;
+      padding: 1em;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #aaa;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    nav a.active {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 1em;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin: 1em 0;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 1.5em;
+    }
+
+    h1 {
+      margin-bottom: 0.4em;
+    }
+
+    .meta {
+      color: #666;
+      font-size: 0.95em;
+      margin-bottom: 1em;
+    }
   </style>
 </head>
 <body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="https://www.linkedin.com/in/william-nagassar-903395218/" target="_blank">LinkedIn</a>
+  </nav>
 
-  <h1>3D‑Printed Rotatable Amp Stand</h1>
-  <div class="meta">Material: PLA • Mass target: ~280 g • Load: ~5.5 kg (12 lb)</div>
+  <main>
+    <h1>3D‑Printed Rotatable Amp Stand</h1>
+    <div class="meta">Material: PLA • Mass target: ~280 g • Load: ~5.5 kg (12 lb)</div>
 
-  <p>
-    A rotating wedge stand that angles a combo amp toward the player while minimizing footprint. 
-    The pivot uses a countersunk bolt and nyloc nut captured in a recessed pocket, with rotation limited by an internal stop.
-    The structure is ribbed along the load path; infill and perimeters are tuned for stiffness-to-weight.
-  </p>
+    <p>
+      A rotating wedge stand that angles a combo amp toward the player while minimizing footprint.
+      The pivot uses a countersunk bolt and nyloc nut captured in a recessed pocket, with rotation limited by an internal stop.
+      The structure is ribbed along the load path; infill and perimeters are tuned for stiffness-to-weight.
+    </p>
 
-  <img src="amp-stand.png" alt="Rotatable amp stand render" />
+    <img src="amp-stand.png" alt="Rotatable amp stand render" />
 
-  <h2>Print & Assembly Notes</h2>
-  <ul>
-    <li>Nozzle 0.4 mm, layer height 0.2–0.28 mm; 4–5 walls; 10–20% grid/gyroid infill</li>
-    <li>Orient wedge on its side to maximize layer strength through the hinge area</li>
-    <li>Use TPU feet or adhesive pads to prevent creep on smooth floors</li>
-  </ul>
+    <h2>Print & Assembly Notes</h2>
+    <ul>
+      <li>Nozzle 0.4 mm, layer height 0.2–0.28 mm; 4–5 walls; 10–20% grid/gyroid infill</li>
+      <li>Orient wedge on its side to maximize layer strength through the hinge area</li>
+      <li>Use TPU feet or adhesive pads to prevent creep on smooth floors</li>
+    </ul>
 
-  <h2>Design Highlights</h2>
-  <ul>
-    <li>Low profile pivot with captured hardware</li>
-    <li>Ribbed internal structure on compression side</li>
-    <li>Optional lock positions for fixed angles</li>
-  </ul>
+    <h2>Design Highlights</h2>
+    <ul>
+      <li>Low profile pivot with captured hardware</li>
+      <li>Ribbed internal structure on compression side</li>
+      <li>Optional lock positions for fixed angles</li>
+    </ul>
 
-  <a class="back" href="index.html">← Back to portfolio</a>
+    <a class="back" href="index.html">← Back to portfolio</a>
+  </main>
 </body>
 </html>
