@@ -61,6 +61,46 @@
       margin: 1em 0;
     }
 
+    .amp-rotation {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 1em 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .amp-rotation img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      animation: ampTurn 4s infinite;
+      margin: 0;
+    }
+
+    .amp-rotation img:first-child {
+      position: relative;
+    }
+
+    .amp-rotation img:nth-child(1) { animation-delay: 0s; }
+    .amp-rotation img:nth-child(2) { animation-delay: 0.5s; }
+    .amp-rotation img:nth-child(3) { animation-delay: 1s; }
+    .amp-rotation img:nth-child(4) { animation-delay: 1.5s; }
+    .amp-rotation img:nth-child(5) { animation-delay: 2s; }
+    .amp-rotation img:nth-child(6) { animation-delay: 2.5s; }
+    .amp-rotation img:nth-child(7) { animation-delay: 3s; }
+
+    @keyframes ampTurn {
+      0% { opacity: 0; }
+      5% { opacity: 1; }
+      25% { opacity: 1; }
+      30% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
     .back {
       display: inline-block;
       margin-top: 1.5em;
@@ -94,6 +134,25 @@
     </p>
 
     <img src="amp-stand.png" alt="Rotatable amp stand render" />
+
+    <h2>Visuals</h2>
+    <p>Photos and CAD renders illustrate the stand and its motion.</p>
+    <img src="ampempty.png" alt="Rotating stand without the amplifier" />
+    <p>The empty stand highlights the compact wedge and pivot hardware.</p>
+    <img src="ampcad.png" alt="Isometric CAD model of amp stand" />
+    <p>Isometric CAD render showing the ribbed structure and captured bolt.</p>
+    <img src="ampcadexploded.png" alt="Exploded CAD view of amp stand" />
+    <p>An exploded view reveals how the printed pieces and fasteners assemble.</p>
+    <div class="amp-rotation">
+      <img src="amp1.png" alt="Amp rotating on stand – frame 1" />
+      <img src="amp2.png" alt="Amp rotating on stand – frame 2" />
+      <img src="amp3.png" alt="Amp rotating on stand – frame 3" />
+      <img src="amp4.png" alt="Amp rotating on stand – frame 4" />
+      <img src="amp3.png" alt="Amp rotating on stand – frame 3" />
+      <img src="amp2.png" alt="Amp rotating on stand – frame 2" />
+      <img src="amp1.png" alt="Amp rotating on stand – frame 1" />
+    </div>
+    <p>This four-frame animation cycles forward then back to demonstrate the amp turning on the stand.</p>
 
     <h2>Print & Assembly Notes</h2>
     <ul>
