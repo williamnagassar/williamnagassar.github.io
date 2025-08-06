@@ -111,6 +111,29 @@
 
     .spec-table th {
       background: #f0f0f0;
+
+      .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  background: #fff;
+  padding: 1em;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.gallery-grid figcaption {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
     }
   </style>
 </head>
@@ -159,6 +182,25 @@
       </table>
     </section>
 
+<section>
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <figure>
+      <img src="nosecone.png" alt="Nosecone" />
+      <figcaption>Nosecone</figcaption>
+    </figure>
+    <figure>
+      <img src="lid.png" alt="Avionics Bay Lid" />
+      <figcaption>Avionics Bay Lid</figcaption>
+    </figure>
+    <figure>
+      <img src="bay.png" alt="Avionics Bay with Lids" />
+      <figcaption>Avionics Bay with Lids</figcaption>
+    </figure>
+  </div>
+</section>
+
+    
     <section>
       <h2>PDF Report</h2>
       <p><a href="rocket-jet-vane.pdf" target="_blank">View the detailed PDF report</a></p>
