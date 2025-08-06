@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing Gear Mechanism Analysis</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #222;
+      background: linear-gradient(#fafafa, #eaeaea);
+    }
+
+    nav {
+      background: #2f343a;
+      padding: 1em;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #aaa;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: #fff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 1em;
+    }
+
+    header.hero {
+      text-align: center;
+      padding: 2em 1em 3em;
+      background: linear-gradient(135deg, #e3f2fd, #f5f5f5);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 2em;
+    }
+
+    .hero img {
+      max-width: 300px;
+      width: 80%;
+      height: auto;
+      margin: 0 auto 1em;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      transition: transform 0.2s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 1.5em;
+      margin: 2em 0;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      background: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .gallery-grid figcaption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.5em;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 1.5em;
+      font-size: 0.9em;
+    }
+
+    h1 {
+      margin-bottom: 0.4em;
+    }
+
+    .meta {
+      color: #666;
+      font-size: 0.95em;
+      margin-bottom: 1em;
+    }
+
+    .spec-table {
+      width: 100%;
+      margin: 1.5em 0;
+      border-collapse: collapse;
+    }
+
+    .spec-table th, .spec-table td {
+      border: 1px solid #ccc;
+      padding: 0.75em 1em;
+      text-align: left;
+    }
+
+    .spec-table th {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="https://www.linkedin.com/in/william-nagassar-903395218/" target="_blank">LinkedIn</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <img src="landinggeardesign.png" alt="Landing gear design rendering" />
+      <h1>Landing Gear Mechanism Analysis</h1>
+      <div class="meta">Mechanical Design Course • Ontario Tech University • Team of 5 • Role: Lead Analyst & Designer</div>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        This project focused on analyzing and designing a retractable landing gear mechanism for a light aircraft. The design had to withstand landing and taxi loads while providing sufficient ground clearance and smooth retraction kinematics.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Contributions</h2>
+      <ul>
+        <li>Led the structural and kinematic analysis to size the strut and linkage members.</li>
+        <li>Developed the detailed CAD model and assembly drawings in SolidWorks.</li>
+        <li>Calculated touchdown and side loads to verify safety factors above 1.5.</li>
+        <li>Coordinated team documentation and presentation.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Specifications</h2>
+      <table class="spec-table">
+        <tr><th>Configuration</th><td>Trailing arm, retractable main landing gear</td></tr>
+        <tr><th>Material</th><td>6061-T6 Aluminum structure with 4140 steel pins</td></tr>
+        <tr><th>Design Load</th><td>1.5 g touchdown at 1200 kg gross weight</td></tr>
+        <tr><th>Safety Factor</th><td>&ge; 1.5 on critical members</td></tr>
+        <tr><th>CAD Software</th><td>SolidWorks 2024</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <p><a href="landinggear.pdf" target="_blank">View the detailed PDF report</a></p>
+    </section>
+
+    <a class="back" href="index.html">&larr; Back to Portfolio</a>
+  </main>
+</body>
+</html>
