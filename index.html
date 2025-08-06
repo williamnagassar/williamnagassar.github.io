@@ -70,31 +70,31 @@
         margin-bottom: 1em;
       }
 
+      /* ── UPDATED PROJECT-CARD TO TWO-COLUMN LAYOUT ── */
       .project-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+        align-items: center;
         background: white;
         border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         margin-bottom: 2em;
         overflow: hidden;
       }
 
-      .project-image {
+      .project-card .project-image {
         width: 100%;
-        max-width: 400px;
         height: auto;
-        object-fit: contain;
+        object-fit: cover;
         display: block;
-        margin: 0 auto;
+        margin: 0;
       }
 
       .project-content {
         padding: 1.5em;
       }
-
-      .project-card h3 {
-        margin-top: 0;
-        color: var(--accent);
-      }
+      /* ── END UPDATED LAYOUT ── */
 
       .read-more {
         display: inline-block;
@@ -192,22 +192,24 @@
     <section id="projects">
       <h2>Projects</h2>
 
+      <!-- ── EXOSKELETON PROJECT CARD WITH COLLAGED THUMBNAIL ── -->
       <div class="project-card">
         <img
-          src="exoskeleton-project.png"
-          alt="Exoskeleton overview"
+          src="exoskeleton-thumb.png"
+          alt="Collage of syringe-actuated exoskeleton arm views"
           class="project-image"
         />
         <div class="project-content">
           <h3>Syringe-Actuated Exoskeleton Arm</h3>
           <p>
-            Led the design of a motorless exoskeleton arm using syringes and
-            elastic return for assistive motion. Integrated mechanical advantage
-            and 3D-printed joints for lightweight efficiency.
+            Led the design of a motorless exoskeleton arm using syringes for
+            mechanical advantage and 3D-printed joints for lightweight efficiency.
+            Integrated elastic return for assistive motion.
           </p>
           <a class="read-more" href="exoskeleton.html">Read More →</a>
         </div>
       </div>
+      <!-- ── END UPDATED CARD ── -->
 
       <div class="project-card">
         <img
@@ -229,7 +231,7 @@
       <div class="project-card">
         <img src="ampcad.png" alt="Amp stand render" class="project-image" />
         <div class="project-content">
-          <h3>3D‑Printed Rotatable Amp Stand</h3>
+          <h3>3D-Printed Rotatable Amp Stand</h3>
           <p>
             Compact stand for elevating a 12 lb guitar amp. Designed for
             strength, print efficiency, and aesthetics with low-profile pivot
