@@ -80,8 +80,11 @@
 
       .project-image {
         width: 100%;
-        height: 200px;
-        object-fit: contain;
+        max-width: 400px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
       }
 
       .project-content {
@@ -277,7 +280,16 @@
         <!-- Perfume Cap -->
         <div class="mini-card">
           <div class="thumb-row">
-            <img src="cap.png" class="thumb" alt="Perfume cap" />
+            <img
+              src="perfumecap.png"
+              class="thumb"
+              alt="Perfume bottle with custom cap"
+            />
+            <img
+              src="perfumecap1.png"
+              class="thumb"
+              alt="Perfume cap CAD model"
+            />
           </div>
           <h4>Perfume Cap</h4>
           <p>Snap-fit cap designed to pair with custom perfume displays.</p>
