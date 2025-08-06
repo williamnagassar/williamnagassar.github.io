@@ -111,6 +111,47 @@
       font-size: 0.95em;
       margin-bottom: 1em;
     }
+
+    .spec-table {
+      width: 100%;
+      margin: 1.5em 0;
+      border-collapse: collapse;
+    }
+
+    .spec-table th, .spec-table td {
+      border: 1px solid #ccc;
+      padding: 0.75em 1em;
+      text-align: left;
+    }
+
+    .spec-table th {
+      background: #f0f0f0;
+    }
+
+    .video-wrapper {
+      margin: 2em 0;
+      text-align: center;
+    }
+
+    .video-wrapper video {
+      max-width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 1em;
+      padding: 0.6em 1em;
+      background: #2f343a;
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .download-btn:hover {
+      background: #1c1f22;
+    }
   </style>
 </head>
 <body>
@@ -123,16 +164,47 @@
     <header class="hero">
       <img src="exoskeleton-project.png" alt="Exoskeleton design overview" />
       <h1>Exoskeleton Arm Design</h1>
-      <div class="meta">Mechanical Design Course • Team of 5 • Role: Lead Designer & Analyst</div>
+      <div class="meta">Mechanical Design Course • Ontario Tech University • Team of 5 • Role: Lead Designer & Analyst</div>
     </header>
 
     <section>
-      <p>I led the design of an exoskeleton arm driven by a linear actuator as part of a final project for a mechanical design course at Ontario Tech University.
-            Working in a team of five, we took the project from initial sketches through to a functional prototype, which incorporated both 3D-printed components and laser-cut aluminum parts.
-            I contributed with approximately 50% of the mechanical design, 100% of the strength analysis, and 30% of the machining/fabrication.</p>
+      <h2>Overview</h2>
+      <p>
+        This project involved designing and prototyping a motorized exoskeleton arm capable of linear extension and elastic return for assisted arm motion. 
+        The system was intended as a proof-of-concept for compact wearable assistive mechanisms, incorporating key principles in force transmission and structural optimization.
+      </p>
     </section>
 
-    <section class="gallery">
+    <section>
+      <h2>My Contributions</h2>
+      <ul>
+        <li>Created 100% of the structural and force analysis using hand calculations and simulation tools.</li>
+        <li>Led the CAD development of the frame, housing, and pulley integration in SolidWorks.</li>
+        <li>Designed key features for modularity and user adjustability.</li>
+        <li>Handled 30% of fabrication — using both 3D-printed PLA and laser-cut aluminum components.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Specifications</h2>
+      <table class="spec-table">
+        <tr><th>Actuator</th><td>12V Linear Actuator, 100 mm stroke, 150 N force</td></tr>
+        <tr><th>Material</th><td>PLA for housing & pulleys; 6061 aluminum for support structure</td></tr>
+        <tr><th>Return System</th><td>Elastic spring-loaded pulley with pre-tensioning slot</td></tr>
+        <tr><th>Max Load (tested)</th><td>4.5 kg assisted arm weight</td></tr>
+        <tr><th>CAD Software</th><td>SolidWorks 2024</td></tr>
+      </table>
+    </section>
+
+    <section class="video-wrapper">
+      <h2>Prototype Demo</h2>
+      <video controls autoplay muted loop>
+        <source src="exoskeleton-demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section>
       <h2>Gallery</h2>
       <div class="gallery-grid">
         <figure>
@@ -148,6 +220,19 @@
           <figcaption>Elastic Return Mechanism</figcaption>
         </figure>
       </div>
+    </section>
+
+    <section>
+      <h2>Download</h2>
+      <a href="exoskeleton-details.pdf" class="download-btn" target="_blank">Download Full Design Report (PDF)</a>
+    </section>
+
+    <section>
+      <h2>Reflection</h2>
+      <p>
+        This project pushed me to balance manufacturability with functional design, especially when integrating rigid and elastic components into a single working system. 
+        It reinforced my ability to take a concept through to a testable prototype under tight time and budget constraints.
+      </p>
     </section>
 
     <a class="back" href="index.html">← Back to Portfolio</a>
