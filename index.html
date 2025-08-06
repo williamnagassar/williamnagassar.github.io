@@ -21,12 +21,12 @@
       background: var(--bg-light);
       color: var(--text-primary);
       line-height: 1.5;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     nav {
       background: var(--bg-dark);
-      padding: 0.8em;
+      padding: 0.6em;
       text-align: center;
       position: sticky;
       top: 0;
@@ -38,7 +38,7 @@
       text-decoration: none;
       color: #aaa;
       font-weight: 500;
-      font-size: 14px;
+      font-size: 13px;
       transition: color 0.2s ease;
     }
 
@@ -49,66 +49,66 @@
 
     header {
       text-align: center;
-      padding: 2.5em 1em 1.5em;
+      padding: 2em 1em 1.2em;
       background-color: white;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     header h1 {
-      font-size: 1.6em;
+      font-size: 1.5em;
       margin-bottom: 0.2em;
     }
 
     section {
-      max-width: 860px;
-      margin: 2em auto;
+      max-width: 900px;
+      margin: 1.8em auto;
       padding: 0 1em;
     }
 
     h2 {
-      font-size: 1.3em;
+      font-size: 1.2em;
       border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.25em;
-      margin-bottom: 0.75em;
+      padding-bottom: 0.2em;
+      margin-bottom: 0.6em;
     }
 
     .project-card {
       background: white;
       border-radius: 6px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      margin-bottom: 1.8em;
+      margin-bottom: 1.2em;
       overflow: hidden;
     }
 
     .project-image {
       display: block;
       max-width: 100%;
-      max-height: 240px;
+      max-height: 180px;
       height: auto;
       margin: 0 auto;
       object-fit: contain;
     }
 
     .project-content {
-      padding: 1.2em;
+      padding: 1em;
     }
 
     .project-card h3 {
       margin-top: 0;
       color: var(--accent);
-      font-size: 1.1em;
+      font-size: 1em;
     }
 
     .read-more {
       display: inline-block;
-      margin-top: 0.8em;
+      margin-top: 0.6em;
       background: var(--accent);
       color: white;
-      padding: 0.4em 0.9em;
+      padding: 0.35em 0.8em;
       border-radius: 4px;
       text-decoration: none;
       font-weight: 500;
-      font-size: 0.9em;
+      font-size: 0.85em;
       transition: background 0.3s ease;
     }
 
@@ -118,42 +118,37 @@
 
     .mini-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5em;
-      margin-top: 1.5em;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1em;
+      margin-top: 1.2em;
     }
 
     .mini-card {
       background: white;
       border-radius: 5px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-      padding: 0.9em;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      padding: 0.8em;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
-      font-size: 0.95em;
+      font-size: 0.85em;
     }
 
     .mini-card:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.08);
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.07);
     }
 
     .thumb-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 0.5em;
-      justify-items: center;
-      margin-bottom: 0.6em;
-    }
-
-    .thumb-row > *:nth-child(3):last-child {
-      grid-column: span 2;
-      justify-self: center;
+      margin-bottom: 0.5em;
     }
 
     .thumb {
       width: 100%;
-      max-width: 140px;
+      max-width: 110px;
       height: auto;
       object-fit: contain;
       border-radius: 4px;
@@ -162,7 +157,7 @@
     }
 
     .thumb:hover {
-      transform: scale(1.07);
+      transform: scale(1.08);
       z-index: 1;
     }
   </style>
@@ -173,95 +168,86 @@
     <a href="#projects">Projects</a>
     <a href="https://www.linkedin.com/in/william-nagassar-903395218/" target="_blank">LinkedIn</a>
   </nav>
-
   <header>
     <h1>William Nagassar</h1>
     <p>Mechanical Engineering Student | CAD, Aerospace & Prototyping</p>
   </header>
-
-  <section id="home">
+  <section id="about">
     <h2>About Me</h2>
     <p>I’m a mechanical engineering student focused on design, prototyping, and aerospace systems. My work spans CAD modeling, high-performance 3D printing, and cross-functional team projects.</p>
   </section>
-
   <section id="projects">
     <h2>Projects</h2>
-
     <div class="project-card">
-      <img src="exoskeleton-project.png" alt="Exoskeleton Arm" class="project-image">
+      <img class="project-image" src="images/exoskeleton_thumb.png" alt="Syringe-Actuated Exoskeleton Arm">
       <div class="project-content">
         <h3>Syringe-Actuated Exoskeleton Arm</h3>
         <p>Led the design of a motorless exoskeleton arm using syringes and elastic return for assistive motion. Integrated mechanical advantage and 3D-printed joints for lightweight efficiency.</p>
         <a class="read-more" href="exoskeleton.html">Read More →</a>
       </div>
     </div>
-
     <div class="project-card">
-      <img src="rocket-jet-vane.png" alt="Jet Vane Control" class="project-image">
+      <img class="project-image" src="images/jetvane_thumb.png" alt="Jet Vane Thrust Vector Control">
       <div class="project-content">
         <h3>Jet Vane Thrust Vector Control</h3>
         <p>Developed a jet vane mechanism for steering solid rockets using carbon fiber vanes in the exhaust stream. Designed for thermal and structural stability under extreme plume conditions.</p>
-        <a class="read-more" href="rocket-jet-vane.html">Read More →</a>
+        <a class="read-more" href="jetvane.html">Read More →</a>
       </div>
     </div>
-
     <div class="project-card">
-      <img src="ampcad.png" alt="Rotating Amp Stand" class="project-image">
+      <img class="project-image" src="images/ampstand_thumb.png" alt="Adjustable Amp Stand">
       <div class="project-content">
-        <h3>3D‑Printed Rotatable Amp Stand</h3>
-        <p>Compact stand with low-profile pivot and reinforced infill for a 12 lb amp. Designed for print efficiency and acoustic directionality.</p>
-        <a class="read-more" href="amp-stand.html">Read More →</a>
+        <h3>Adjustable Amp Stand</h3>
+        <p>Created a tilt-adjustable amplifier stand using angled tracks and pivoting brackets. Designed for small spaces and optimized for strength using FDM-printed ribs and chamfers.</p>
+        <a class="read-more" href="ampstand.html">Read More →</a>
       </div>
     </div>
-
+  </section>
+  <section id="products">
     <h2>Product & Accessory Designs</h2>
     <div class="mini-grid">
       <div class="mini-card">
         <div class="thumb-row">
-          <img src="phonestand.png" class="thumb" alt="Phone Stand CAD">
-          <img src="phonestand1.png" class="thumb" alt="Phone Stand Photo">
+          <img class="thumb" src="images/phonestand1.png">
+          <img class="thumb" src="images/phonestand2.png">
         </div>
-        <h4>Compact Phone Stand</h4>
+        <strong>Compact Phone Stand</strong>
         <p>Pocket-sized stand with two-angle support and cable cutout.</p>
       </div>
-
       <div class="mini-card">
         <div class="thumb-row">
-          <img src="katana.png" class="thumb" alt="Katana CAD">
-          <img src="katana1.png" class="thumb" alt="Katana Mount">
-          <img src="katana2.png" class="thumb" alt="Katana Detail">
+          <img class="thumb" src="images/katanahook1.png">
+          <img class="thumb" src="images/katanahook2.png">
+          <img class="thumb" src="images/katanahook3.png">
         </div>
-        <h4>Wall‑Mounted Katana Holder</h4>
+        <strong>Wall-Mounted Katana Holder</strong>
         <p>Parametric mounts with felt-lined saddles and hidden fasteners.</p>
       </div>
-
       <div class="mini-card">
         <div class="thumb-row">
-          <img src="perfume.png" class="thumb" alt="Perfume CAD">
-          <img src="perfume1.png" class="thumb" alt="Perfume Angle">
-          <img src="perfume2.png" class="thumb" alt="Perfume Top">
+          <img class="thumb" src="images/perfume1.png">
+          <img class="thumb" src="images/perfume2.png">
+          <img class="thumb" src="images/perfume3.png">
         </div>
-        <h4>Perfume Mat & Display Holder</h4>
+        <strong>Perfume Mat & Display Holder</strong>
         <p>Modular drip tray with anti-slip and docked bottle stations.</p>
       </div>
-
       <div class="mini-card">
         <div class="thumb-row">
-          <img src="bottle.png" class="thumb" alt="Pill Bottle">
-          <img src="cap.png" class="thumb" alt="Threaded Cap">
-          <video src="threadcap.mov" class="thumb" autoplay loop muted playsinline></video>
+          <img class="thumb" src="images/pillbottle1.png">
+          <img class="thumb" src="images/pillbottle2.png">
+          <img class="thumb" src="images/pillbottle3.png">
         </div>
-        <h4>Pill Bottle with Threaded Cap</h4>
+        <strong>Pill Bottle with Threaded Cap</strong>
         <p>Knurled cap, sealing lip, and print-in-place threads.</p>
       </div>
-
       <div class="mini-card">
         <div class="thumb-row">
-          <img src="wallmount.png" class="thumb" alt="Wall Mount CAD">
-          <img src="wallmount1.png" class="thumb" alt="Wall Mount Use">
-          <img src="wallmount2.png" class="thumb" alt="Wall Mount View">
+          <img class="thumb" src="images/wallmount1.png">
+          <img class="thumb" src="images/wallmount2.png">
+          <img class="thumb" src="images/wallmount3.png">
         </div>
-        <h4>iPhone Wall Mount</h4>
+        <strong>iPhone Wall Mount</strong>
         <p>Locking orientation bracket with concealed routing slots.</p>
       </div>
     </div>
