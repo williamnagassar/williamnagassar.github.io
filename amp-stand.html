@@ -30,14 +30,9 @@
       transition: color 0.2s ease;
     }
 
-    nav a.active {
-      color: #fff;
-      font-weight: 600;
-    }
-
+    nav a.active,
     nav a:hover {
       color: #fff;
-      text-decoration: none;
     }
 
     main {
@@ -104,6 +99,7 @@
       font-size: 0.9em;
       color: #555;
       margin-top: 0.5em;
+      text-align: center;
     }
 
     .amp-rotation {
@@ -137,6 +133,7 @@
     .back {
       display: inline-block;
       margin-top: 1.5em;
+      font-size: 0.9em;
     }
 
     h1 {
@@ -147,6 +144,22 @@
       color: #666;
       font-size: 0.95em;
       margin-bottom: 1em;
+    }
+
+    .spec-table {
+      width: 100%;
+      margin: 1.5em 0;
+      border-collapse: collapse;
+    }
+
+    .spec-table th, .spec-table td {
+      border: 1px solid #ccc;
+      padding: 0.75em 1em;
+      text-align: left;
+    }
+
+    .spec-table th {
+      background: #f0f0f0;
     }
   </style>
 </head>
@@ -160,28 +173,48 @@
     <header class="hero">
       <img src="ampcad.png" alt="CAD model of the rotatable amp stand" />
       <h1>3D‑Printed Rotatable Amp Stand</h1>
-      <div class="meta">Material: PLA • Mass target: ~280 g • Load: ~5.5 kg (12 lb)</div>
+      <div class="meta">Personal Design • PLA Material • 12 lb Load • ~280 g Print Mass</div>
     </header>
 
     <section>
+      <h2>Overview</h2>
       <p>
-        Designed to raise and tilt a compact guitar amplifier, this 3D‑printed stand uses a low‑profile wedge and captive hardware
-        to redirect sound toward the musician. The rotating hub incorporates an internal stop and nyloc‑secured pivot so the amp
-        stays put at any angle. Ribbing and tuned infill concentrate strength only where it’s needed, keeping print time and mass
-        to a minimum.
+        I designed a compact rotatable amp stand to raise and tilt a 12 lb guitar amplifier. The stand uses a low-profile wedge and captive pivot hardware to angle the amp upward toward the player. Internally, ribbing and tuned infill minimize material use while maintaining strength. The hub features a nyloc-secured pivot with an internal stop to hold angles securely.
       </p>
     </section>
 
-    <section class="gallery">
+    <section>
+      <h2>Print & Assembly Notes</h2>
+      <ul>
+        <li>Nozzle: 0.4 mm, Layer Height: 0.2–0.28 mm</li>
+        <li>4–5 perimeters, 10–20% grid/gyroid infill</li>
+        <li>Wedge printed on its side to maximize hinge strength</li>
+        <li>M5 countersunk bolt with nyloc nut for pivot</li>
+        <li>TPU feet or adhesive pads recommended for grip</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Specifications</h2>
+      <table class="spec-table">
+        <tr><th>Material</th><td>PLA</td></tr>
+        <tr><th>Weight Support</th><td>~5.5 kg (12 lb)</td></tr>
+        <tr><th>Print Mass</th><td>~280 g</td></tr>
+        <tr><th>Pivot Type</th><td>Captive M5 bolt + nyloc nut</td></tr>
+        <tr><th>Design Software</th><td>SolidWorks</td></tr>
+      </table>
+    </section>
+
+    <section>
       <h2>Gallery</h2>
       <div class="gallery-grid">
         <figure>
           <img src="ampempty.png" alt="Rotating stand without the amplifier" />
-          <figcaption>The empty stand highlights the compact wedge and pivot hardware.</figcaption>
+          <figcaption>Stand alone showing the wedge and pivot hardware.</figcaption>
         </figure>
         <figure>
           <img src="ampcadexploded.png" alt="Exploded CAD view of amp stand" />
-          <figcaption>An exploded view reveals how the printed pieces and fasteners assemble.</figcaption>
+          <figcaption>Exploded view showing fasteners and internal ribs.</figcaption>
         </figure>
         <figure>
           <div class="amp-rotation">
@@ -190,37 +223,18 @@
             <img src="amp3.png" alt="Amp rotating on stand – frame 3" />
             <img src="amp4.png" alt="Amp rotating on stand – frame 4" />
           </div>
-          <figcaption>This four-frame animation demonstrates the amp turning on the stand.</figcaption>
+          <figcaption>Four-frame animation showing the amp rotation.</figcaption>
         </figure>
       </div>
     </section>
 
     <section>
-      <h2>Print & Assembly Notes</h2>
-      <ul>
-        <li>Nozzle 0.4 mm, layer height 0.2–0.28 mm; 4–5 walls; 10–20% grid/gyroid infill</li>
-        <li>Orient wedge on its side to maximize layer strength through the hinge area</li>
-        <li>Use TPU feet or adhesive pads to prevent creep on smooth floors</li>
-        <li>M5 countersunk bolt with nyloc nut provides a smooth, secure pivot</li>
-      </ul>
-    </section>
-
-    <section>
       <h2>Design Highlights</h2>
       <ul>
-        <li>Low profile pivot with captured hardware</li>
-        <li>Ribbed internal structure on compression side</li>
-        <li>Optional lock positions for fixed angles</li>
-        <li>Weight-efficient topology prints in roughly 280 g of PLA</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Future Improvements</h2>
-      <ul>
-        <li>Detent mechanism for repeatable angle settings</li>
-        <li>Rubberized feet for added vibration isolation</li>
-        <li>Parametric scaling for different amplifier footprints</li>
+        <li>Rotating hub with internal stop</li>
+        <li>Modular design with captured fasteners</li>
+        <li>Ribbed infill for efficient structural strength</li>
+        <li>Optional detents for fixed angles (future improvement)</li>
       </ul>
     </section>
 
@@ -232,19 +246,14 @@
       const frames = Array.from(document.querySelectorAll('.amp-rotation img'));
       let index = 0;
       let direction = 1;
-      const interval = 1000; // 1 second per frame for a quicker rotation
+      const interval = 1000;
 
       frames[index].classList.add('active');
 
       setInterval(() => {
         frames[index].classList.remove('active');
-
-        if (index === frames.length - 1) {
-          direction = -1;
-        } else if (index === 0) {
-          direction = 1;
-        }
-
+        if (index === frames.length - 1) direction = -1;
+        else if (index === 0) direction = 1;
         index += direction;
         frames[index].classList.add('active');
       }, interval);
