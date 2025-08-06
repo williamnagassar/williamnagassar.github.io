@@ -79,9 +79,10 @@
     }
 
     .project-image {
-      width: 100%;
-      height: auto;
-      max-height: 240px;
+      display: block;
+      max-width: 100%;
+      max-height: 200px;
+      margin: 0 auto;
       object-fit: contain;
     }
 
@@ -140,11 +141,12 @@
     }
 
     .thumb {
-      width: 180px;
-      height: 180px;
+      width: 100%;
+      max-width: 240px;
+      height: auto;
       object-fit: contain;
       border-radius: 4px;
-      background: #e0e0e0;
+      background: none;
       transition: transform 0.3s ease;
     }
 
@@ -154,101 +156,3 @@
     }
   </style>
 </head>
-<body>
-  <nav>
-    <a href="#home" class="active">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="https://www.linkedin.com/in/william-nagassar-903395218/" target="_blank">LinkedIn</a>
-  </nav>
-
-  <header>
-    <h1>William Nagassar</h1>
-    <p>Mechanical Engineering Student | CAD, Aerospace & Prototyping</p>
-  </header>
-
-  <section id="home">
-    <h2>About Me</h2>
-    <p>I’m a mechanical engineering student focused on design, prototyping, and aerospace systems. My work spans CAD modeling, high-performance 3D printing, and cross-functional team projects.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="project-card">
-      <img src="exoskeleton-project.png" alt="Exoskeleton overview" class="project-image" />
-      <div class="project-content">
-        <h3>Syringe-Actuated Exoskeleton Arm</h3>
-        <p>Led the design of a motorless exoskeleton arm using syringes and elastic return for assistive motion. Integrated mechanical advantage and 3D-printed joints for lightweight efficiency.</p>
-        <a class="read-more" href="exoskeleton.html">Read More →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="rocket-jet-vane.png" alt="Jet vane rocket" class="project-image" />
-      <div class="project-content">
-        <h3>Jet Vane TVC System for Rockets</h3>
-        <p>Developed a carbon-fiber jet vane mechanism for solid rocket vector control. Integrated servo actuation and thermal shielding for high-power ascent correction.</p>
-        <a class="read-more" href="rocket-jet-vane.html">Read More →</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="ampcad.png" alt="Amp stand render" class="project-image" />
-      <div class="project-content">
-        <h3>3D‑Printed Rotatable Amp Stand</h3>
-        <p>Compact stand for elevating a 12 lb guitar amp. Designed for strength, print efficiency, and aesthetics with low-profile pivot and non-slip feet.</p>
-        <a class="read-more" href="amp-stand.html">Read More →</a>
-      </div>
-    </div>
-
-    <h2 style="margin-top: 3em">Product & Accessory Designs</h2>
-    <div class="mini-grid">
-      <div class="mini-card">
-        <div class="thumb-row">
-          <img src="phonestand.png" class="thumb" alt="Phone stand 1">
-          <img src="phonestand1.png" class="thumb" alt="Phone stand 2">
-        </div>
-        <h4>Compact Phone Stand</h4>
-        <p>Pocket-sized stand with two-angle support and cable cutout.</p>
-      </div>
-
-      <div class="mini-card">
-        <div class="thumb-row">
-          <img src="katana.png" class="thumb" alt="Katana holder 1">
-          <img src="katana1.png" class="thumb" alt="Katana holder 2">
-        </div>
-        <h4>Wall-Mounted Katana Holder</h4>
-        <p>Felt-lined supports with parametric fasteners and hidden anchors.</p>
-      </div>
-
-      <div class="mini-card">
-        <div class="thumb-row">
-          <img src="perfume.png" class="thumb" alt="Perfume 1">
-          <img src="perfume1.png" class="thumb" alt="Perfume 2">
-        </div>
-        <h4>Perfume Mat & Display</h4>
-        <p>Slip-proof tray with modular holders and integrated drainage lip.</p>
-      </div>
-
-      <div class="mini-card">
-        <div class="thumb-row">
-          <img src="bottle.png" class="thumb" alt="Bottle">
-          <img src="cap.png" class="thumb" alt="Cap">
-          <video src="threadcap.mov" class="thumb" autoplay muted loop playsinline oncontextmenu="return false;" controlsList="nodownload"></video>
-        </div>
-        <h4>Threaded Pill Bottle</h4>
-        <p>Knurled cap, gasket groove, print-in-place threads.</p>
-      </div>
-
-      <div class="mini-card">
-        <div class="thumb-row">
-          <img src="wallmount.png" class="thumb" alt="Wall mount 1">
-          <img src="wallmount1.png" class="thumb" alt="Wall mount 2">
-        </div>
-        <h4>iPhone Wall Mount</h4>
-        <p>Secure mount for video calling with cable routing & locking tab.</p>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
