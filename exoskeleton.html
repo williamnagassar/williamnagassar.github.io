@@ -3,128 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Exoskeleton Arm Project</title>
+  <title>Exoskeleton Arm</title>
   <style>
-    :root {
-      --accent: #1a73e8;
-      --accent-hover: #1669c1;
-      --bg-light: #f0f2f5;
-      --bg-dark: #2f343a;
-      --text-primary: #333;
-      --text-secondary: #555;
-      --card-bg: #fff;
-      --border-radius: 12px;
-      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg-light);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
-    nav {
-      background: var(--bg-dark);
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      color: var(--card-bg);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-    nav a:hover,
-    nav a.active {
-      color: var(--accent);
-    }
-    main {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-    .section {
-      background: var(--card-bg);
-      padding: 2rem;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
-      margin-bottom: 2rem;
-    }
-    .section h2 {
-      margin-top: 0;
-      color: var(--accent);
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.5rem;
-    }
-    .section p {
-      color: var(--text-secondary);
-    }
-    .section img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: var(--border-radius);
-      margin-top: 1rem;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      border-radius: var(--border-radius);
-      transition: background 0.2s ease;
-    }
-    a.button:hover {
-      background: var(--accent-hover);
-    }
+    :root { --accent: #1a73e8; --bg: #fff; --text: #333; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: sans-serif; background: var(--bg); color: var(--text); }
+    nav { padding: 0.5rem; text-align: right; }
+    nav a { color: var(--accent); text-decoration: none; font-size: 0.8rem; margin-left: 1rem; }
+    main { max-width: 640px; margin: 2rem auto; text-align: center; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    p { font-size: 0.95rem; margin-bottom: 1.5rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    figure { margin: 0; }
+    img { width: 100%; border-radius: 8px; }
+    figcaption { font-size: 0.85rem; margin-top: 0.5rem; color: var(--accent); }
+    a.back { display: inline-block; margin-top: 2rem; font-size: 0.9rem; color: var(--accent); text-decoration: none; }
   </style>
 </head>
 <body>
   <nav>
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html">Portfolio</a>
     <a href="https://www.linkedin.com/in/william-nagassar-903395218/" target="_blank">LinkedIn</a>
   </nav>
-
   <main>
-    <section class="section">
-      <h1>Exoskeleton Arm Design</h1>
-      <p>
-        I led the design of an exoskeleton arm driven by a linear actuator as part of a final project for a mechanical design course at Ontario Tech University. Working in a team of five, we took the project from initial sketches through to a functional prototype, which incorporated both 3D-printed components and laser-cut aluminum parts. I contributed with approximately 50% of the mechanical design, 100% of the strength analysis, and 30% of the machining/fabrication.
-      </p>
-      <img src="exoskeleton-project.png" alt="Exoskeleton design overview">
-    </section>
-
-    <section class="section">
-      <h2>Free Body Diagram of Hand Grasper</h2>
-      <p>Detailed free body diagram illustrating forces acting on the hand grasper mechanism.</p>
-      <img src="fbd.png" alt="Free body diagram of the hand grasper mechanism">
-    </section>
-
-    <section class="section">
-      <h2>Pulley Mechanism Visualization</h2>
-      <p>Visualization of the pulley mechanism where twisting the handle actuates the grasper.</p>
-      <img src="pulleymechanism.png" alt="Pulley mechanism of the grasper by twisting the handle">
-    </section>
-
-    <section class="section">
-      <h2>Elastic Return Mechanism</h2>
-      <p>Illustration of the elastic return mechanism using a wire spring that automatically closes the grasper when released.</p>
-      <img src="pulleyspring.png" alt="Elastic return mechanism of the hand grasper using a wire spring">
-    </section>
-
-    <a href="index.html" class="button">&larr; Back to Portfolio</a>
+    <h1>Exoskeleton Arm</h1>
+    <p>I led the design of an exoskeleton arm driven by a linear actuator as part of a final project for a mechanical design course at Ontario Tech University.
+            Working in a team of five, we took the project from initial sketches through to a functional prototype, which incorporated both 3D-printed components and laser-cut aluminum parts.
+            I contributed with approximately 50% of the mechanical design, 100% of the strength analysis, and 30% of the machining/fabrication.</p>
+    <div class="grid">
+      <figure>
+        <img src="fbd.png" alt="FBD">
+        <figcaption>Free Body Diagram</figcaption>
+      </figure>
+      <figure>
+        <img src="pulleymechanism.png" alt="Pulley">
+        <figcaption>Pulley Mechanism</figcaption>
+      </figure>
+      <figure>
+        <img src="pulleyspring.png" alt="Spring">
+        <figcaption>Elastic Return</figcaption>
+      </figure>
+    </div>
+    <a href="index.html" class="back">← Back to Portfolio</a>
   </main>
 </body>
 </html>
