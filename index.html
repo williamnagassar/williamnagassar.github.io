@@ -8,7 +8,7 @@
   <style>
     :root {
       --accent: #1a237e;
-      --bg-light: #ffffff;
+      --bg-light: #f4f6f8;
       --bg-dark: #2f343a;
       --text-primary: #222;
       --text-muted: #666;
@@ -20,13 +20,12 @@
       padding: 0;
       background: var(--bg-light);
       color: var(--text-primary);
-      line-height: 1.5;
-      font-size: 14px;
+      line-height: 1.6;
     }
 
     nav {
       background: var(--bg-dark);
-      padding: 0.6em;
+      padding: 1em;
       text-align: center;
       position: sticky;
       top: 0;
@@ -34,11 +33,10 @@
     }
 
     nav a {
-      margin: 0 0.8em;
+      margin: 0 1em;
       text-decoration: none;
       color: #aaa;
       font-weight: 500;
-      font-size: 13px;
       transition: color 0.2s ease;
     }
 
@@ -49,66 +47,62 @@
 
     header {
       text-align: center;
-      padding: 2em 1em 1.2em;
+      padding: 3em 1em 2em;
       background-color: white;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     header h1 {
-      font-size: 1.5em;
-      margin-bottom: 0.2em;
+      font-size: 2em;
+      margin-bottom: 0.25em;
     }
 
     section {
       max-width: 900px;
-      margin: 1.8em auto;
+      margin: 2em auto;
       padding: 0 1em;
     }
 
     h2 {
-      font-size: 1.2em;
+      font-size: 1.6em;
       border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.2em;
-      margin-bottom: 0.6em;
+      padding-bottom: 0.3em;
+      margin-bottom: 1em;
     }
 
     .project-card {
       background: white;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      margin-bottom: 1.2em;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 2em;
       overflow: hidden;
     }
 
     .project-image {
-      display: block;
-      max-width: 100%;
-      max-height: 180px;
+      width: 100%;
       height: auto;
-      margin: 0 auto;
-      object-fit: contain;
+      max-height: 280px;
+      object-fit: cover;
     }
 
     .project-content {
-      padding: 1em;
+      padding: 1.5em;
     }
 
     .project-card h3 {
       margin-top: 0;
       color: var(--accent);
-      font-size: 1em;
     }
 
     .read-more {
       display: inline-block;
-      margin-top: 0.6em;
+      margin-top: 1em;
       background: var(--accent);
       color: white;
-      padding: 0.35em 0.8em;
+      padding: 0.5em 1em;
       border-radius: 4px;
       text-decoration: none;
       font-weight: 500;
-      font-size: 0.85em;
       transition: background 0.3s ease;
     }
 
@@ -118,53 +112,45 @@
 
     .mini-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1em;
-      margin-top: 1.2em;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2em;
+      margin-top: 1.5em;
     }
 
     .mini-card {
       background: white;
-      border-radius: 5px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-      padding: 0.8em;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+      padding: 1em;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       text-align: center;
-      font-size: 0.85em;
     }
 
     .mini-card:hover {
-      transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.07);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     }
 
     .thumb-row {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: 0.5em;
-      margin-bottom: 0.5em;
+      justify-content: center;
+      gap: 0.75em;
+      margin-bottom: 1em;
     }
 
     .thumb {
-      width: 100%;
-      max-width: 110px;
-      height: auto;
-      object-fit: contain;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
       border-radius: 4px;
-      background: transparent;
-      transition: transform 0.3s ease;
-    }
-
-    .thumb:hover {
-      transform: scale(1.08);
-      z-index: 1;
+      background: #e0e0e0;
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="#about" class="active">Home</a>
+    <a href="#home" class="active">Home</a>
     <a href="#projects">Projects</a>
     <a href="https://www.linkedin.com/in/william-nagassar-903395218/" target="_blank">LinkedIn</a>
   </nav>
@@ -174,7 +160,7 @@
     <p>Mechanical Engineering Student | CAD, Aerospace & Prototyping</p>
   </header>
 
-  <section id="about">
+  <section id="home">
     <h2>About Me</h2>
     <p>I’m a mechanical engineering student focused on design, prototyping, and aerospace systems. My work spans CAD modeling, high-performance 3D printing, and cross-functional team projects.</p>
   </section>
@@ -183,7 +169,7 @@
     <h2>Projects</h2>
 
     <div class="project-card">
-      <img class="project-image" src="exoskeleton-project.png" alt="Syringe-Actuated Exoskeleton Arm">
+      <img src="exoskeleton-project.png" alt="Exoskeleton overview" class="project-image" />
       <div class="project-content">
         <h3>Syringe-Actuated Exoskeleton Arm</h3>
         <p>Led the design of a motorless exoskeleton arm using syringes and elastic return for assistive motion. Integrated mechanical advantage and 3D-printed joints for lightweight efficiency.</p>
@@ -192,73 +178,74 @@
     </div>
 
     <div class="project-card">
-      <img class="project-image" src="rocket-jet-vane.png" alt="Jet Vane Thrust Vector Control">
+      <img src="rocket-jet-vane.png" alt="Jet vane rocket" class="project-image" />
       <div class="project-content">
-        <h3>Jet Vane Thrust Vector Control</h3>
-        <p>Developed a jet vane mechanism for steering solid rockets using carbon fiber vanes in the exhaust stream. Designed for thermal and structural stability under extreme plume conditions.</p>
+        <h3>Jet Vane TVC System for Rockets</h3>
+        <p>Developed a carbon-fiber jet vane mechanism for solid rocket vector control. Integrated servo actuation and thermal shielding for high-power ascent correction.</p>
         <a class="read-more" href="rocket-jet-vane.html">Read More →</a>
       </div>
     </div>
 
     <div class="project-card">
-      <img class="project-image" src="amp1.png" alt="Adjustable Amp Stand">
+      <img src="ampcad.png" alt="Amp stand render" class="project-image" />
       <div class="project-content">
-        <h3>Adjustable Amp Stand</h3>
-        <p>Created a tilt-adjustable amplifier stand using angled tracks and pivoting brackets. Designed for small spaces and optimized for strength using FDM-printed ribs and chamfers.</p>
+        <h3>3D‑Printed Rotatable Amp Stand</h3>
+        <p>Compact stand for elevating a 12 lb guitar amp. Designed for strength, print efficiency, and aesthetics with low-profile pivot and non-slip feet.</p>
         <a class="read-more" href="amp-stand.html">Read More →</a>
       </div>
     </div>
-  </section>
 
-  <section id="products">
-    <h2>Product & Accessory Designs</h2>
+    <h2 style="margin-top: 3em">Product & Accessory Designs</h2>
     <div class="mini-grid">
+      <!-- Phone Stand -->
       <div class="mini-card">
         <div class="thumb-row">
-          <img class="thumb" src="phonestand.png" alt="Phone Stand CAD">
-          <img class="thumb" src="phonestand1.png" alt="Phone Stand Photo">
+          <img src="phonestand.png" class="thumb" alt="Phone stand 1">
+          <img src="phonestand1.png" class="thumb" alt="Phone stand 2">
         </div>
-        <strong>Compact Phone Stand</strong>
+        <h4>Compact Phone Stand</h4>
         <p>Pocket-sized stand with two-angle support and cable cutout.</p>
       </div>
 
+      <!-- Katana Holder -->
       <div class="mini-card">
         <div class="thumb-row">
-          <img class="thumb" src="katana.png" alt="Katana Holder CAD">
-          <img class="thumb" src="katana1.png" alt="Katana Holder Photo">
-          <img class="thumb" src="katana2.png" alt="Katana Holder Detail">
+          <img src="katana.png" class="thumb" alt="Katana holder 1">
+          <img src="katana1.png" class="thumb" alt="Katana holder 2">
         </div>
-        <strong>Wall-Mounted Katana Holder</strong>
-        <p>Parametric mounts with felt-lined saddles and hidden fasteners.</p>
+        <h4>Wall-Mounted Katana Holder</h4>
+        <p>Felt-lined supports with parametric fasteners and hidden anchors.</p>
       </div>
 
+      <!-- Perfume Holder -->
       <div class="mini-card">
         <div class="thumb-row">
-          <img class="thumb" src="perfume.png" alt="Perfume Holder CAD">
-          <img class="thumb" src="perfume1.png" alt="Perfume Holder Angle">
-          <img class="thumb" src="perfume2.png" alt="Perfume Holder Detail">
+          <img src="perfume.png" class="thumb" alt="Perfume 1">
+          <img src="perfume1.png" class="thumb" alt="Perfume 2">
         </div>
-        <strong>Perfume Mat & Display Holder</strong>
-        <p>Modular drip tray with anti-slip and docked bottle stations.</p>
+        <h4>Perfume Mat & Display</h4>
+        <p>Slip-proof tray with modular holders and integrated drainage lip.</p>
       </div>
 
+      <!-- Pill Bottle -->
       <div class="mini-card">
         <div class="thumb-row">
-          <img class="thumb" src="bottle.png" alt="Pill Bottle CAD">
-          <img class="thumb" src="cap.png" alt="Threaded Cap Photo">
+          <img src="bottle.png" class="thumb" alt="Bottle">
+          <img src="cap.png" class="thumb" alt="Cap">
+          <video src="threadcap.mov" class="thumb" autoplay muted loop playsinline oncontextmenu="return false;" controlsList="nodownload"></video>
         </div>
-        <strong>Pill Bottle with Threaded Cap</strong>
-        <p>Knurled cap, sealing lip, and print-in-place threads.</p>
+        <h4>Threaded Pill Bottle</h4>
+        <p>Knurled cap, gasket groove, print-in-place threads.</p>
       </div>
 
+      <!-- Wall Mount -->
       <div class="mini-card">
         <div class="thumb-row">
-          <img class="thumb" src="wallmount.png" alt="Wall Mount CAD">
-          <img class="thumb" src="wallmount1.png" alt="Wall Mount Photo">
-          <img class="thumb" src="wallmount2.png" alt="Wall Mount Detail">
+          <img src="wallmount.png" class="thumb" alt="Wall mount 1">
+          <img src="wallmount1.png" class="thumb" alt="Wall mount 2">
         </div>
-        <strong>iPhone Wall Mount</strong>
-        <p>Locking orientation bracket with concealed routing slots.</p>
+        <h4>iPhone Wall Mount</h4>
+        <p>Secure mount for video calling with cable routing & locking tab.</p>
       </div>
     </div>
   </section>
