@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="William Nagassar — Mechanical Engineering student portfolio featuring CAD, prototyping, aerospace R&D, and product design projects." />
     <title>William Nagassar | Portfolio</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <style>
@@ -11,11 +12,14 @@
         --bg-light: #f4f6f8;
         --bg-dark: #2f343a;
         --text-primary: #222;
-        --text-muted: #666;
+        --text-muted: #555;
+        --card: #fff;
       }
 
+      * { box-sizing: border-box; }
+
       body {
-        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         margin: 0;
         padding: 0;
         background: var(--bg-light);
@@ -23,176 +27,149 @@
         line-height: 1.6;
       }
 
+      /* NAV */
       nav {
         background: var(--bg-dark);
-        padding: 1em;
+        padding: 0.85em 1em;
         text-align: center;
         position: sticky;
         top: 0;
         z-index: 1000;
       }
-
       nav a {
         margin: 0 1em;
         text-decoration: none;
         color: #aaa;
-        font-weight: 500;
-        transition: color 0.2s ease;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        transition: color 0.2s ease, opacity 0.2s ease;
       }
-
-      nav a:hover,
-      nav a.active {
-        color: #fff;
-      }
+      nav a:hover, nav a:focus, nav a.active { color: #fff; }
+      nav a:focus { outline: 2px dashed #fff; outline-offset: 2px; }
 
       header {
         text-align: center;
         padding: 3em 1em 2em;
-        background-color: white;
+        background-color: var(--card);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       }
+      header h1 { font-size: 2rem; margin-bottom: 0.25em; }
+      header p { margin: 0.25em 0 0; color: var(--text-muted); }
 
-      header h1 {
-        font-size: 2em;
-        margin-bottom: 0.25em;
-      }
-
-      section {
-        max-width: 900px;
-        margin: 2em auto;
-        padding: 0 1em;
-      }
-
+      section { max-width: 1000px; margin: 2em auto; padding: 0 1em; }
       h2 {
-        font-size: 1.6em;
+        font-size: 1.6rem;
         border-bottom: 2px solid var(--accent);
         padding-bottom: 0.3em;
         margin-bottom: 1em;
       }
+      h3 { font-size: 1.25rem; margin: 0 0 0.25rem; }
+      .muted { color: var(--text-muted); }
 
-      /* ── UPDATED PROJECT-CARD TO TWO-COLUMN LAYOUT ── */
+      /* PROJECT CARDS */
       .project-card {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 2em;
-        align-items: center;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        gap: 0;
+        align-items: stretch;
+        background: var(--card);
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.06);
         margin-bottom: 2em;
         overflow: hidden;
       }
-
-      .project-card .project-image {
+      .project-image {
         width: 100%;
-        height: auto;
+        height: 260px; /* keeps grid tidy */
         object-fit: cover;
         display: block;
         margin: 0;
       }
-
-      .project-content {
-        padding: 1.5em;
-      }
-      /* ── END UPDATED LAYOUT ── */
+      .project-content { padding: 1.1em 1.25em 1.25em; }
+      .project-content p { color: #444; margin: 0.35em 0 0.75em; }
 
       .read-more {
         display: inline-block;
-        margin-top: 1em;
+        margin-top: 0.4em;
         background: var(--accent);
         color: white;
-        padding: 0.5em 1em;
-        border-radius: 4px;
+        padding: 0.55em 0.95em;
+        border-radius: 6px;
         text-decoration: none;
-        font-weight: 500;
-        transition: background 0.3s ease;
+        font-weight: 600;
+        transition: transform 0.15s ease, background 0.2s ease;
+      }
+      .read-more:hover { background: #0d133d; transform: translateY(-1px); }
+
+      /* Tags (Role / Tools) */
+      .tag-row { display: flex; flex-wrap: wrap; gap: 0.5em; margin-top: 0.6em; }
+      .tag {
+        font-size: 0.82rem;
+        background: #eef1ff;
+        border: 1px solid #dbe0ff;
+        color: #1a237e;
+        padding: 0.2em 0.5em;
+        border-radius: 999px;
+        white-space: nowrap;
       }
 
-      .read-more:hover {
-        background: #0d133d;
-      }
-
+      /* MINI GRID */
       .mini-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2em;
+        gap: 1.5em;
         margin-top: 1.5em;
       }
-
       .mini-card {
-        background: white;
-        border-radius: 6px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+        background: var(--card);
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.06);
         padding: 1em;
-        transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
         text-align: center;
       }
+      .mini-card:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0,0,0,0.10); }
 
-      .mini-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+      .thumb-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75em; margin-bottom: 0.8em; }
+      .thumb-row.three { display: grid; grid-template-columns: repeat(2, 140px); justify-content: center; gap: 0.75em; }
+      .thumb-row.three .thumb:nth-child(1) { grid-column: 1 / span 2; justify-self: center; }
+
+      .thumb { width: 140px; height: 140px; object-fit: contain; border-radius: 6px; background: none; cursor: zoom-in; }
+      img { transition: transform 0.2s ease; }
+      img.thumb:hover { transform: scale(1.04); }
+      video.thumb { transition: transform 0.2s ease; width: 140px; height: 140px; border-radius: 6px; }
+      video.thumb:hover { transform: scale(1.02); }
+
+      /* Accessibility: prefers reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        * { transition: none !important; }
       }
 
-      .thumb-row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75em;
-        margin-bottom: 1em;
+      /* Responsive */
+      @media (max-width: 900px) {
+        .project-image { height: 220px; }
+      }
+      @media (max-width: 768px) {
+        .project-card { grid-template-columns: 1fr; }
+        .project-image { height: 200px; }
       }
 
-      .thumb-row.three {
-        display: grid;
-        grid-template-columns: repeat(2, 140px);
-        justify-content: center;
-        gap: 0.75em;
+      /* Simple Lightbox */
+      .lightbox {
+        position: fixed; inset: 0; display: none; place-items: center;
+        background: rgba(0,0,0,0.75); z-index: 2000; padding: 2vw;
       }
-
-      .thumb-row.three .thumb:nth-child(1) {
-        grid-column: 1 / span 2;
-        justify-self: center;
-      }
-
-      .thumb {
-        width: 140px;
-        height: 140px;
-        object-fit: contain;
-        border-radius: 4px;
-        background: none;
-      }
-
-      img {
-        transition: transform 0.2s ease;
-      }
-
-      img:hover {
-        transform: scale(1.05);
-      }
-
-      img.thumb:hover {
-        transform: scale(2);
-      }
-
-      video.thumb {
-        transition: transform 0.2s ease;
-      }
-
-      video.thumb:hover {
-        transform: scale(2);
-      }
+      .lightbox.open { display: grid; }
+      .lightbox img { max-width: 95vw; max-height: 90vh; border-radius: 10px; }
+      .lightbox button { position: absolute; top: 12px; right: 12px; background: #fff; border: 0; padding: 0.5em 0.7em; border-radius: 8px; font-weight: 700; cursor: pointer; }
     </style>
   </head>
   <body>
-    <nav>
+    <nav aria-label="Primary">
       <a href="#home" class="active">Home</a>
-      <a
-      <a
-        href="https://www.linkedin.com/in/william-nagassar-903395218/"
-        target="_blank"
-        >LinkedIn</a
-      >
+      <a href="#projects">Projects</a>
+      <a href="#products">Products</a>
+      <a href="https://www.linkedin.com/in/william-nagassar-903395218/" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
 
     <header>
@@ -200,205 +177,255 @@
       <p>Mechanical Engineering Student | CAD, Product Design & Prototyping</p>
     </header>
 
-    <section id="home">
-      <h2>About Me</h2>
+    <section id="home" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
       <p>
-        Hi, I'm William. Welcome to my project portfolio. I’m a mechanical engineering student with a strong focus on design, prototyping,
-        and mechanical systems. My experience includes CAD modeling, 3D printing, mechanical analysis,
-        and collaborative engineering projects with applications across consumer products, mechanical systems, and aerospace technology.
+        Hi, I'm William. Welcome to my project portfolio. I’m a mechanical engineering student with a strong focus on design,
+        prototyping, and mechanical systems. My experience includes CAD modeling, 3D printing, mechanical analysis, and
+        collaborative engineering projects with applications across consumer products, mechanical systems, and aerospace technology.
       </p>
+      <p class="muted"><strong>Core Skills:</strong> SolidWorks, CATIA V5, Siemens NX, FEA, DFM/DFA, 3D printing, mechanical analysis, prototyping.</p>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
 
-      <!-- ── EXOSKELETON PROJECT CARD WITH COLLAGED THUMBNAIL ── -->
+      <!-- EXOSKELETON -->
       <div class="project-card">
         <img
           src="exoskeleton-project.png"
-          alt="Collage of syringe-actuated exoskeleton arm views"
+          alt="Collage of a syringe-actuated exoskeleton arm: assembly render, exploded view, and prototype"
           class="project-image"
+          loading="lazy"
         />
         <div class="project-content">
           <h3>Exoskeleton Arm & Hand Grasper Design</h3>
           <p>
-           As part of a five-person team, I led the design of a linear actuator-driven exoskeleton arm. We sketched, modeled, and
-            prototyped the device using 3D-printed and laser-cut parts for our final mechanical design project.
+            Led mechanical design for a linear-actuated exoskeleton arm within a 5-person team. Progressed from sketches to
+            CAD and prototype using 3D-printed and laser-cut components for a capstone-style course project.
           </p>
-          <a class="read-more" href="exoskeleton.html">Read More →</a>
+          <div class="tag-row" aria-label="Project tags">
+            <span class="tag">Role: Lead Design</span>
+            <span class="tag">Tools: NX, 3D Printing</span>
+            <span class="tag">Focus: DFM/DFA</span>
+          </div>
+          <a class="read-more" href="exoskeleton.html" aria-label="Read more about Exoskeleton Arm project">Read More →</a>
         </div>
       </div>
-      <!-- ── END UPDATED CARD ── -->
 
+      <!-- ROCKET / JET VANE -->
       <div class="project-card">
         <img
           src="rocket-jet-vane.png"
-          alt="Jet vane rocket"
+          alt="Experimental solid-fuel rocket CAD with jet vane control mechanism"
           class="project-image"
+          loading="lazy"
         />
         <div class="project-content">
           <h3>Experimental Rocket for Jet Vane Development</h3>
           <p>
-         As part of Ontario Tech’s Space & Rocketry Technology Development team, I was tasked with the design and fabrication
-            of a solid fuel test rocket for jet vane R&D, handling CAD, stability analysis, and recovery mechanism development.
+            Designed and fabricated a solid-fuel test vehicle for jet vane R&D within Ontario Tech’s Space & Rocketry Technology
+            Development team. Responsibilities included CAD, stability analysis (CG/CP tradeoffs), and recovery mechanism development.
           </p>
-          <a class="read-more" href="rocket-jet-vane.html">Read More →</a>
+          <div class="tag-row">
+            <span class="tag">Role: Design & Fabrication</span>
+            <span class="tag">Tools: CATIA V5</span>
+            <span class="tag">Focus: Stability Analysis</span>
+          </div>
+          <a class="read-more" href="rocket-jet-vane.html" aria-label="Read more about Jet Vane Rocket project">Read More →</a>
         </div>
       </div>
 
-            <!-- New Landing Gear Analysis and Design -->
+      <!-- LANDING GEAR -->
       <div class="project-card">
         <img
           src="landinggeardesign.png"
-          alt="Landing Gear Analysis and Design Thumbnail"
+          alt="Landing gear kinematic mechanism diagram and SolidWorks model"
           class="project-image"
+          loading="lazy"
         />
         <div class="project-content">
           <h3>Landing Gear Analysis & Design</h3>
           <p>
-            I led a team of 5 to analyze and design a landing gear mechanism for our final project in a mechanical design course.
-            I contributed to developing the initial simulation in Working Model and later performed detailed kinematic analysis and component design using SolidWorks.
+            Led a 5-person team through concept, simulation, and kinematic analysis; preliminary model in Working Model followed by
+            detailed component design and evaluation in SolidWorks.
           </p>
-          <a class="read-more" href="landinggear.html">Read More →</a>
+          <div class="tag-row">
+            <span class="tag">Role: Team Lead</span>
+            <span class="tag">Tools: Working Model, SolidWorks</span>
+            <span class="tag">Focus: Kinematics</span>
+          </div>
+          <a class="read-more" href="landinggear.html" aria-label="Read more about Landing Gear project">Read More →</a>
         </div>
       </div>
 
+      <!-- AMP STAND -->
       <div class="project-card">
-        <img src="ampcad.png" alt="Amp stand render" class="project-image" />
+        <img src="ampcad.png" alt="Exploded CAD view of rotatable guitar amp stand" class="project-image" loading="lazy" />
         <div class="project-content">
-          <h3>3D-Printed Rotatable Amp Stand</h3>
+          <h3>3D‑Printed Rotatable Amp Stand</h3>
           <p>
-            I designed a modular stand to easily rotate and tilt a 12 lb guitar amplifier. The stand was optimized for structural strength,
-            ease of manufacturability, and simple assembly.
+            Designed a modular stand to rotate and tilt a 12 lb guitar amplifier, optimized for strength, ease of manufacture,
+            and simple assembly.
           </p>
-          <a class="read-more" href="amp-stand.html">Read More →</a>
+          <div class="tag-row">
+            <span class="tag">Role: Sole Designer</span>
+            <span class="tag">Tools: NX</span>
+            <span class="tag">Focus: DFM/DFA</span>
+          </div>
+          <a class="read-more" href="amp-stand.html" aria-label="Read more about Amp Stand project">Read More →</a>
         </div>
       </div>
 
-            <!-- New Hot Air Balloon Project -->
+      <!-- HOT AIR BALLOON -->
       <div class="project-card">
         <img
           src="hotairballoon.png"
-          alt="Hot Air Balloon Project Thumbnail"
+          alt="Hot air balloon analysis visuals including force balance and stability charts"
           class="project-image"
+          loading="lazy"
         />
         <div class="project-content">
           <h3>Hot Air Balloon Project</h3>
           <p>
-            As part of a team of 5, I led the analysis of a hot air balloon system, performing calculations
-            related to center of gravity, buoyant force, weight distribution, and vertical acceleration to assess
-            stability and lift performance.
+            Led analysis for a team of 5 on CG, buoyant force, weight distribution, and vertical acceleration to assess lift and stability.
           </p>
-          <a class="read-more" href="hotairballoon.pdf">Read More →</a>
+          <div class="tag-row">
+            <span class="tag">Role: Analysis Lead</span>
+            <span class="tag">Tools: Excel/Math</span>
+            <span class="tag">Focus: Statics/Dynamics</span>
+          </div>
+          <a class="read-more" href="hotairballoon.pdf" aria-label="Open Hot Air Balloon project PDF">Read More →</a>
         </div>
       </div>
 
-      <!-- New Turbine Blade Material Selection -->
+      <!-- TURBINE BLADE MATERIALS -->
       <div class="project-card">
         <img
           src="turbineblade.png"
-          alt="Jet Engine Turbine Blade Material Selection Thumbnail"
+          alt="Turbine blade materials comparison and selection chart for jet engine application"
           class="project-image"
+          loading="lazy"
         />
         <div class="project-content">
           <h3>Jet Engine Turbine Blade Material Selection</h3>
           <p>
-            As part of a materials science course final project, I evaluated candidate materials for high-temperature turbine 
-            blades used in jet engines, balancing factors such as creep resistance, mechanical strength, and manufacturability.
+            Evaluated candidate materials for high-temperature turbine blades, balancing creep resistance, mechanical strength,
+            and manufacturability as part of a materials science project.
           </p>
-          <a class="read-more" href="jetengine.pdf">Read More →</a>
+          <div class="tag-row">
+            <span class="tag">Role: Research & Selection</span>
+            <span class="tag">Tools: Literature Review</span>
+            <span class="tag">Focus: Materials</span>
+          </div>
+          <a class="read-more" href="jetengine.pdf" aria-label="Open Jet Engine materials selection PDF">Read More →</a>
         </div>
       </div>
+    </section>
 
-      <h2 style="margin-top: 3em">Product & Accessory Designs</h2>
+    <section id="products" aria-labelledby="products-heading">
+      <h2 id="products-heading">Product & Accessory Designs</h2>
       <div class="mini-grid">
         <!-- Phone Stand -->
         <div class="mini-card">
           <div class="thumb-row">
-            <img src="phonestand.png" class="thumb" alt="Phone stand 1" />
-            <img src="phonestand1.png" class="thumb" alt="Phone stand 2" />
+            <img src="phonestand.png" class="thumb lightboxable" alt="Compact phone stand render, front view" loading="lazy" />
+            <img src="phonestand1.png" class="thumb lightboxable" alt="Compact phone stand render, side view" loading="lazy" />
           </div>
           <h4>Compact Phone Stand</h4>
-          <p>Small iPhone 12 mini stand with a fixed support and charger cable cutout. Designed in NX.</p>
+          <p class="muted">Small iPhone 12 mini stand with fixed support and charger cable cutout. Designed in NX.</p>
         </div>
 
         <!-- Katana Holder -->
         <div class="mini-card">
           <div class="thumb-row three">
-            <img src="katana.png" class="thumb" alt="Katana holder 1" />
-            <img src="katana1.png" class="thumb" alt="Katana holder 2" />
-            <img src="katana2.png" class="thumb" alt="Katana holder 3" />
+            <img src="katana.png" class="thumb lightboxable" alt="Wall-mounted katana holder render front" loading="lazy" />
+            <img src="katana1.png" class="thumb lightboxable" alt="Wall-mounted katana holder side angle" loading="lazy" />
+            <img src="katana2.png" class="thumb lightboxable" alt="Wall-mounted katana holder detail view" loading="lazy" />
           </div>
           <h4>Wall-Mounted Katana Holder</h4>
-          <p>
-            3D printed support for a katana designed for easy installation. Features fillet at bottom of support as well as higher infill to improve strength. Designed in CATIA V5.
-          </p>
+          <p class="muted">3D printed support with bottom fillet and high infill for strength. Designed in CATIA V5.</p>
         </div>
 
-        <!-- Perfume Holder -->
+        <!-- Perfume Mat & Display -->
         <div class="mini-card">
           <div class="thumb-row three">
-            <img src="perfume.png" class="thumb" alt="Perfume 1" />
-            <img src="perfume1.png" class="thumb" alt="Perfume 2" />
-            <img src="perfume2.png" class="thumb" alt="Perfume 3" />
+            <img src="perfume.png" class="thumb lightboxable" alt="Perfume display tray with hex pattern" loading="lazy" />
+            <img src="perfume1.png" class="thumb lightboxable" alt="Perfume tray with bottle supports" loading="lazy" />
+            <img src="perfume2.png" class="thumb lightboxable" alt="Perfume tray detail of surface pattern" loading="lazy" />
           </div>
           <h4>Perfume Mat & Display</h4>
-          <p>
-            Slip-proof tray with perfume supports and a hexagon pattern on the tray to increase sustainability. Designed in CATIA V5.
-          </p>
+          <p class="muted">Slip-proof tray with hexagon pattern to reduce material while keeping stiffness. Designed in CATIA V5.</p>
         </div>
 
         <!-- Perfume Cap -->
         <div class="mini-card">
           <div class="thumb-row">
-            <img
-              src="perfumecap.png"
-              class="thumb"
-              alt="Perfume bottle with custom cap"
-            />
-            <img
-              src="perfumecap1.png"
-              class="thumb"
-              alt="Perfume cap CAD model"
-            />
+            <img src="perfumecap.png" class="thumb lightboxable" alt="Replica bottle with custom snap-fit cap" loading="lazy" />
+            <img src="perfumecap1.png" class="thumb lightboxable" alt="Custom snap-fit cap CAD model" loading="lazy" />
           </div>
           <h4>Perfume Cap</h4>
-          <p>Snap-fit cap designed to pair with Replica perfume bottles. Designed in CATIA V5.</p>
+          <p class="muted">Snap-fit cap designed to pair with Replica perfume bottles. Designed in CATIA V5.</p>
         </div>
 
         <!-- Pill Bottle -->
         <div class="mini-card">
           <div class="thumb-row">
-            <img src="bottle.png" class="thumb" alt="Bottle" />
-            <img src="cap.png" class="thumb" alt="Cap" />
+            <img src="bottle.png" class="thumb lightboxable" alt="Pill bottle CAD render" loading="lazy" />
+            <img src="cap.png" class="thumb lightboxable" alt="Buttress thread cap CAD render" loading="lazy" />
             <video
               src="threadcap.mov"
               class="thumb"
-              autoplay
-              muted
-              loop
-              playsinline
-              oncontextmenu="return false;"
-              controlsList="nodownload"
-            ></video>
+              aria-label="Threaded cap demo video"
+              autoplay muted loop playsinline preload="metadata"
+              oncontextmenu="return false;" controlsList="nodownload"></video>
           </div>
           <h4>Threaded Cap and Bottle</h4>
-          <p>Threaded cap and bottle utilziing buttress thread profile to increase leak resistance. Designed in CATIA V5.</p>
+          <p class="muted">Bottle and cap using a buttress thread profile for improved seal/leak resistance. Designed in CATIA V5.</p>
         </div>
 
         <!-- Wall Mount -->
         <div class="mini-card">
           <div class="thumb-row three">
-            <img src="wallmount.png" class="thumb" alt="Wall mount 1" />
-            <img src="wallmount1.png" class="thumb" alt="Wall mount 2" />
-            <img src="wallmount2.png" class="thumb" alt="Wall mount 3" />
+            <img src="wallmount.png" class="thumb lightboxable" alt="iPhone wall mount front view" loading="lazy" />
+            <img src="wallmount1.png" class="thumb lightboxable" alt="iPhone wall mount side view" loading="lazy" />
+            <img src="wallmount2.png" class="thumb lightboxable" alt="iPhone wall mount installed view" loading="lazy" />
           </div>
           <h4>iPhone Wall Mount</h4>
-          <p>
-            Secure iPhone 12 mini mount for autonomous video recording with cable cutout at the bottom. Designed in CATIA V5.
-          </p>
+          <p class="muted">Secure mount for autonomous video recording with cable clearance. Designed in CATIA V5.</p>
         </div>
       </div>
     </section>
+
+    <!-- Simple Lightbox (thumbs only) -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+      <button type="button" id="lightboxClose" aria-label="Close preview">Close ✕</button>
+      <img alt="Preview" id="lightboxImg" />
+    </div>
+
+    <script>
+      // Lightbox for .lightboxable thumbnails
+      (function() {
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightboxImg');
+        const lbClose = document.getElementById('lightboxClose');
+        const imgs = document.querySelectorAll('img.lightboxable');
+        imgs.forEach(img => {
+          img.addEventListener('click', () => {
+            lbImg.src = img.currentSrc || img.src;
+            lb.classList.add('open');
+            lb.setAttribute('aria-hidden', 'false');
+          });
+        });
+        function closeLB(){
+          lb.classList.remove('open');
+          lb.setAttribute('aria-hidden', 'true');
+          lbImg.removeAttribute('src');
+        }
+        lb.addEventListener('click', (e) => { if (e.target === lb) closeLB(); });
+        lbClose.addEventListener('click', closeLB);
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLB(); });
+      })();
+    </script>
   </body>
 </html>
