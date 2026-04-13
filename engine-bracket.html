@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aircraft Engine Loading Bracket Topology Optimization</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #222;
+      background: linear-gradient(#fafafa, #eaeaea);
+    }
+
+    nav {
+      background: #2f343a;
+      padding: 1em;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #aaa;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: #fff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 1em;
+    }
+
+    header.hero {
+      text-align: center;
+      padding: 2em 1em 3em;
+      background: linear-gradient(135deg, #e3f2fd, #f5f5f5);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 2em;
+    }
+
+    .hero img {
+      max-width: 300px;
+      width: 80%;
+      height: auto;
+      margin: 0 auto 1em;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      transition: transform 0.2s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 1.5em;
+      margin: 2em 0;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      background: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .gallery-grid figcaption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.5em;
+      text-align: center;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 1.5em;
+      font-size: 0.9em;
+    }
+
+    h1 {
+      margin-bottom: 0.4em;
+    }
+
+    .meta {
+      color: #666;
+      font-size: 0.95em;
+      margin-bottom: 1em;
+    }
+
+    .spec-table {
+      width: 100%;
+      margin: 1.5em 0;
+      border-collapse: collapse;
+    }
+
+    .spec-table th, .spec-table td {
+      border: 1px solid #ccc;
+      padding: 0.75em 1em;
+      text-align: left;
+    }
+
+    .spec-table th {
+      background: #f0f0f0;
+    }
+
+    .load-cases {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1em;
+      margin-top: 1em;
+    }
+
+    .load-case-card {
+      background: #fff;
+      padding: 1.5em;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      border-left: 4px solid #007bff;
+    }
+
+    .load-case-card h4 {
+      margin-top: 0;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="https://www.linkedin.com/in/william-nagassar-903395218/" target="_blank">LinkedIn</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <img src="bracket-hero.png" alt="Topology Optimized Engine Loading Bracket" />
+      <h1>Aircraft Engine Loading Bracket Topology Optimization</h1>
+      <div class="meta">MANE 4600U • Ontario Tech University • Individual Project</div>
+    </header>
+
+    <section>
+      <h2>Executive Summary</h2>
+      <p>
+        This project details the structural analysis and topology optimization of an aircraft engine loading bracket intended for Fused Deposition Modeling (FDM) manufacturing. The primary objective was to achieve a 50% reduction in weight while maintaining structural integrity across four distinct flight and operational load cases. The optimization and validation were performed using ANSYS Workbench.
+      </p>
+    </section>
+
+    <section>
+      <h2>Methodology & Simulation Setup</h2>
+      <table class="spec-table">
+        <tr><th>Software Used</th><td>ANSYS Workbench</td></tr>
+        <tr><th>Manufacturing Constraint</th><td>Fused Deposition Modeling (FDM)</td></tr>
+        <tr><th>Optimization Target</th><td>50% Total Weight Reduction</td></tr>
+        <tr><th>Boundary Conditions</th><td>Fixed condition applied to all interface mounting holes</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Optimization Results</h2>
+      <p>
+        The topology optimization solver was run targeting a 50% mass reduction. Due to the significantly higher maximum stress in Load Case 1, its objective weight was iteratively increased to 5 to ensure the final geometry would not yield.
+      </p>
+      <table class="spec-table">
+        <tr><th>Final Mass Reduction</th><td>51.1% (Reduced from 4.52 lbs to 2.31 lbs)</td></tr>
+        <tr><th>Final Volume Reduction</th><td>51.1% (Reduced from 28.27 in³ to 14.44 in³)</td></tr>
+        <tr><th>Minimum Factor of Safety</th><td>1.14 (Occurs during Load Case 1)</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Applied Load Cases & Structural Validation</h2>
+      <p>Four independent static structural load cases were evaluated with forces applied directly to the pin hole geometry. The optimized geometry was validated against these cases to ensure yielding would not occur.</p>
+      
+      <div class="load-cases">
+        <div class="load-case-card">
+          <h4>Load Case 1 (Vertical)</h4>
+          <p><strong>Load:</strong> 8,000 lbs Upward</p>
+          <p><strong>Original Max Stress:</strong> 99.9 ksi</p>
+          <p><strong>Optimized Max Stress:</strong> 115 ksi</p>
+          <p><strong>Factor of Safety:</strong> 1.14</p>
+        </div>
+        <div class="load-case-card">
+          <h4>Load Case 2 (Horizontal)</h4>
+          <p><strong>Load:</strong> 8,500 lbs to the Right</p>
+          <p><strong>Original Max Stress:</strong> 62.9 ksi</p>
+          <p><strong>Optimized Max Stress:</strong> 69.8 ksi</p>
+          <p><strong>Factor of Safety:</strong> 1.88</p>
+        </div>
+        <div class="load-case-card">
+          <h4>Load Case 3 (Off-Axis)</h4>
+          <p><strong>Load:</strong> 9,500 lbs @ 42° relative to vertical</p>
+          <p><strong>Original Max Stress:</strong> 51.0 ksi</p>
+          <p><strong>Optimized Max Stress:</strong> 70.0 ksi</p>
+          <p><strong>Factor of Safety:</strong> 1.87</p>
+        </div>
+        <div class="load-case-card">
+          <h4>Load Case 4 (Torsional)</h4>
+          <p><strong>Load:</strong> 5,000 lb-in Clockwise Moment</p>
+          <p><strong>Original Max Stress:</strong> 51.6 ksi</p>
+          <p><strong>Optimized Max Stress:</strong> 52.7 ksi</p>
+          <p><strong>Factor of Safety:</strong> 2.48</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Conclusion & Recommendations</h2>
+      <p>
+        The topology optimization successfully resulted in a final mass of 2.31 lbs, surpassing the goal with a highly efficient 51.1% weight reduction. Structural validation confirms that the part will not yield under the prescribed load cases. However, for real-world aerospace applications, a minimum factor of safety of around 1.5 is recommended to account for dynamic loading and the inherent material anisotropy of FDM printing. Future iterations should prioritize meeting this structural threshold over a strict mass reduction target.
+      </p>
+    </section>
+
+    <section>
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <figure>
+          <img src="bracket-cad.png" alt="CAD Model of the Engine Loading Bracket" />
+          <figcaption>Original CAD Model</figcaption>
+        </figure>
+        <figure>
+          <img src="bracket-optimized.png" alt="Smoothed Topology Optimized Loading Bracket" />
+          <figcaption>Smoothed Optimized Geometry</figcaption>
+        </figure>
+        <figure>
+          <img src="bracket-meshed.png" alt="Meshed Loading Bracket" />
+          <figcaption>Optimized Mesh Model</figcaption>
+        </figure>
+        <figure>
+          <img src="bracket-lc1.png" alt="Topology Optimized Load Case 1 FEA Solution" />
+          <figcaption>FEA Solution: Load Case 1 (Max Stress: 115 ksi)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Project Reports</h2>
+      <ul>
+        <li><a href="topology-optimization-report.pdf" target="_blank">View the Detailed Optimization Report (PDF)</a></li>
+      </ul>
+    </section>
+
+    <a class="back" href="index.html">← Back to Portfolio</a>
+  </main>
+</body>
+</html>
