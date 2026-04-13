@@ -97,21 +97,21 @@
       flex-direction: column;
     }
 
-    /* --- NEW CODE ADDED HERE --- */
+    /* --- UPDATED CODE HERE --- */
     .gallery-grid img {
       width: 100%;
-      height: 200px; /* Forces all gallery images to be exactly 200px tall */
-      object-fit: cover; /* Crops the image proportionally without stretching */
+      height: 200px; 
+      object-fit: contain; /* Shrinks the image proportionally to fit inside the box without cropping */
       display: block;
     }
-    /* --------------------------- */
+    /* ------------------------- */
 
     .gallery-grid figcaption {
       font-size: 0.9em;
       color: #555;
       margin-top: 0.5em;
       text-align: center;
-      flex-grow: 1; /* Pushes the caption nicely to the bottom if text lengths vary */
+      flex-grow: 1; 
     }
 
     .back {
