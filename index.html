@@ -92,9 +92,9 @@
       .project-image {
         width: 100%;
         height: 280px; 
-        object-fit: contain; /* GUARANTEES zero cropping */
+        object-fit: contain;
         object-position: center; 
-        background-color: #fafafa; /* Slight contrast from pure white card */
+        background-color: #fafafa;
         display: block;
         margin: 0;
         border-bottom: 1px solid #f0f0f0;
@@ -104,7 +104,7 @@
         padding: 1.25em;
         display: flex;
         flex-direction: column;
-        flex-grow: 1; /* Allows the content area to fill vertical space */
+        flex-grow: 1; 
       }
       
       .project-content h3 {
@@ -142,8 +142,8 @@
         text-decoration: none;
         font-weight: 600;
         transition: transform 0.15s ease, background 0.2s ease;
-        margin-top: auto; /* Pushes the button to the bottom of the card */
-        align-self: flex-start; /* Keeps the button from stretching */
+        margin-top: auto; 
+        align-self: flex-start; 
       }
       
       .read-more:hover { 
@@ -183,21 +183,13 @@
       }
 
       @media (max-width: 900px) {
-        .projects-grid {
-          gap: 1.5em;
-        }
-        .project-image { 
-          height: 240px; 
-        }
+        .projects-grid { gap: 1.5em; }
+        .project-image { height: 240px; }
       }
       
       @media (max-width: 768px) {
-        .projects-grid { 
-          grid-template-columns: 1fr; /* Stacks cards to 1 column on mobile */
-        }
-        .project-image { 
-          height: 260px; 
-        }
+        .projects-grid { grid-template-columns: 1fr; }
+        .project-image { height: 260px; }
       }
 
       .lightbox {
@@ -236,6 +228,7 @@
       <h2 id="projects-heading">Projects</h2>
 
       <div class="projects-grid">
+        
         <div class="project-card">
           <img
             src="lobepump.png"
@@ -246,7 +239,7 @@
           <div class="project-content">
             <h3>FDM-Optimized Manually Operated Lobe Pump</h3>
             <p>
-              Designed a highly toleranced lobe pump for Material Extrusion (MEX) using SolidWorks, applying DFAM principles like Gothic arch fluid ports to eliminate internal supports and reduce print time by 12%. Optimized material efficiency in Bambu Studio for a 70% mass reduction and validated a PLA prototype achieving a leak-free volumetric flow rate of 112.57 mL/s.
+              Led the design and optimization of a highly toleranced, manually operated lobe pump for 3D printing using SolidWorks. Applied DFAM principles to eliminate internal supports and reduce mass by 70%, successfully validating a leak-free PLA prototype with a 112.57 mL/s flow rate.
             </p>
             <div class="tag-row" aria-label="Project tags">
               <span class="tag">Role: Team Lead</span>
@@ -288,7 +281,7 @@
           <div class="project-content">
             <h3>Open-Air Gondola Carriage System</h3>
             <p>
-              Designed a lightweight 346g dual N20 gear-driven rope-climbing mechanism, applying DFM principles for FDM printing on a Bambu P1S to minimize internal supports. Performed FMEA to resolve critical traction and stability risks, achieving 100% reliability during 30° inclined dynamic load testing.
+              Engineered a lightweight, gear-driven rope-climbing gondola mechanism using DFM principles for efficient FDM printing. Conducted FMEA to mitigate traction risks, achieving 100% reliability during dynamic load testing on a 30° incline.
             </p>
             <div class="tag-row">
               <span class="tag">Role: Team Lead</span>
@@ -330,7 +323,7 @@
           <div class="project-content">
             <h3>Car Chassis FEA Analysis & Redesign</h3>
             <p>
-              Conducted Finite Element Analysis (FEA) on a car chassis to map stress distribution as well as bending and torsional stiffness. Optimized the chassis geometry to achieve a 15.8% mass reduction while maintaining stiffness within 8% of the original design, verified through mesh independence studies.
+              Conducted Finite Element Analysis (FEA) to map stress distribution and optimize the structural geometry of a vehicle chassis. Executed mesh independence studies and reduced overall mass by 15.8% while maintaining original bending and torsional stiffness parameters.
             </p>
             <div class="tag-row">
               <span class="tag">Role: Solo</span>
@@ -351,7 +344,7 @@
           <div class="project-content">
             <h3>Aircraft Engine Loading Bracket Topology Optimization</h3>
             <p>
-              Performed structural analysis and topology optimization using ANSYS Workbench, achieving a 51.1% mass reduction for FDM printing while maintaining structural integrity. Evaluated four distinct static structural load cases (vertical, horizontal, angled, and torsional) to successfully prevent material yield under all peak loads.
+              Performed structural analysis and topology optimization on an aircraft engine bracket using ANSYS Workbench. Evaluated multiple static load cases to prevent material yield, achieving a 51.1% mass reduction for FDM printing while maintaining structural integrity.
             </p>
             <div class="tag-row">
               <span class="tag">Role: Solo</span>
@@ -409,6 +402,16 @@
     <section id="products" aria-labelledby="products-heading">
       <h2 id="products-heading">Product & Accessory Designs</h2>
       <div class="mini-grid">
+
+        <div class="mini-card">
+          <div class="thumb-row">
+            <img src="ampstand.png" class="thumb lightboxable" alt="Amp stand front view" loading="lazy" />
+            <img src="ampstand1.png" class="thumb lightboxable" alt="Amp stand side view" loading="lazy" />
+          </div>
+          <h4>Guitar Amp Stand</h4>
+          <p class="muted">Custom angled stand to improve acoustic projection and ergonomics. Designed for FDM printing.</p>
+        </div>
+
         <div class="mini-card">
           <div class="thumb-row">
             <img src="phonestand.png" class="thumb lightboxable" alt="Compact phone stand render, front view" loading="lazy" />
