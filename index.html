@@ -49,7 +49,7 @@
 
       header {
         text-align: center;
-        padding: 1.25em 1em; /* tightened to remove extra top space */
+        padding: 1.25em 1em;
         background-color: var(--card);
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       }
@@ -80,7 +80,7 @@
       }
       .project-image {
         width: 100%;
-        height: 260px; /* keeps grid tidy */
+        height: 260px;
         object-fit: cover;
         display: block;
         margin: 0;
@@ -140,12 +140,10 @@
       video.thumb { transition: transform 0.2s ease; width: 140px; height: 140px; border-radius: 6px; }
       video.thumb:hover { transform: scale(1.02); }
 
-      /* Accessibility: prefers reduced motion */
       @media (prefers-reduced-motion: reduce) {
         * { transition: none !important; }
       }
 
-      /* Responsive */
       @media (max-width: 900px) {
         .project-image { height: 220px; }
       }
@@ -154,7 +152,6 @@
         .project-image { height: 200px; }
       }
 
-      /* Simple Lightbox */
       .lightbox {
         position: fixed; inset: 0; display: none; place-items: center;
         background: rgba(0,0,0,0.75); z-index: 2000; padding: 2vw;
@@ -190,7 +187,27 @@
     <section id="projects" aria-labelledby="projects-heading">
       <h2 id="projects-heading">Projects</h2>
 
-      <!-- EXOSKELETON -->
+      <div class="project-card">
+        <img
+          src="lobepump.png"
+          alt="CAD model and physical prototype of FDM-optimized lobe pump"
+          class="project-image"
+          loading="lazy"
+        />
+        <div class="project-content">
+          <h3>FDM-Optimized Manually Operated Lobe Pump</h3>
+          <p>
+            Designed a highly toleranced lobe pump for Material Extrusion (MEX) using SolidWorks, applying DFAM principles like Gothic arch fluid ports to eliminate internal supports and reduce print time by 12%[cite: 17, 18, 25]. Optimized material efficiency in Bambu Studio for a 70% mass reduction and validated a PLA prototype achieving a leak-free volumetric flow rate of 112.57 mL/s[cite: 18, 26].
+          </p>
+          <div class="tag-row" aria-label="Project tags">
+            <span class="tag">Role: Team Lead</span>
+            <span class="tag">Tools: SolidWorks, Bambu Studio</span>
+            <span class="tag">Focus: DFAM, Testing</span>
+          </div>
+          <a class="read-more" href="lobe-pump.html" aria-label="Read more about Lobe Pump project">Read More →</a>
+        </div>
+      </div>
+
       <div class="project-card">
         <img
           src="exoskeleton-project.png"
@@ -199,21 +216,40 @@
           loading="lazy"
         />
         <div class="project-content">
-          <h3>Exoskeleton Arm & Hand Grasper Design</h3>
+          <h3>Exoskeleton Arm with Hand Grasper</h3>
           <p>
-            Led mechanical design for a linear-actuated exoskeleton arm within a 5-person team. We sketched, modeled, and prototyped
-            the device using 3D-printed and laser-cut components for a capstone-style course project.
+            Led design and prototyping of an ergonomic exoskeleton arm using FEA, 3D printing, and GD&T for CNC-machined parts[cite: 10, 28]. Oversaw all phases of the project, ensuring delivery of a functional physical prototype within 12 weeks[cite: 10, 28].
           </p>
           <div class="tag-row" aria-label="Project tags">
-            <span class="tag">Role: Lead Design</span>
+            <span class="tag">Role: Team Lead</span>
             <span class="tag">Tools: NX, 3D Printing, FEA</span>
-            <span class="tag">Focus: Structural Analysis, DFM/DFA</span>
+            <span class="tag">Focus: GD&T, DFM/DFA</span>
           </div>
           <a class="read-more" href="exoskeleton.html" aria-label="Read more about Exoskeleton Arm project">Read More →</a>
         </div>
       </div>
 
-      <!-- ROCKET / JET VANE -->
+      <div class="project-card">
+        <img
+          src="gondolacarriage.png"
+          alt="Open-air gondola carriage CAD model and prototype testing"
+          class="project-image"
+          loading="lazy"
+        />
+        <div class="project-content">
+          <h3>Open-Air Gondola Carriage System</h3>
+          <p>
+            Designed a lightweight 346g dual N20 gear-driven rope-climbing mechanism, applying DFM principles for FDM printing on a Bambu P1S to minimize internal supports[cite: 18, 19, 26, 27]. Performed FMEA to resolve critical traction and stability risks, achieving 100% reliability during 30° inclined dynamic load testing[cite: 19, 20, 27].
+          </p>
+          <div class="tag-row">
+            <span class="tag">Role: Team Lead</span>
+            <span class="tag">Tools: Bambu Studio, FDM</span>
+            <span class="tag">Focus: DFM, FMEA, Load Testing</span>
+          </div>
+          <a class="read-more" href="gondola-carriage.html" aria-label="Read more about Gondola Carriage project">Read More →</a>
+        </div>
+      </div>
+
       <div class="project-card">
         <img
           src="rocket-jet-vane.png"
@@ -224,19 +260,59 @@
         <div class="project-content">
           <h3>Experimental Rocket for Jet Vane Development</h3>
           <p>
-            Designed and fabricated a solid-fuel test vehicle for jet vane R&D within Ontario Tech’s Space & Rocketry Technology
-            Development team. Responsibilities included CAD, stability analysis (CG/CP tradeoffs), and recovery mechanism development.
+            Lead development of a solid fuel test vehicle for validating jet vane thrust vector control technology[cite: 25]. Coordinated mounting mechanism design with the team to ensure structural and thermal compatibility[cite: 25].
           </p>
           <div class="tag-row">
             <span class="tag">Role: Design & Fabrication</span>
-              <span class="tag">Tools: SolidWorks, OpenRocket</span>
-            <span class="tag">Focus: Aerodynamic Analysis, DFM/DFA</span>
+            <span class="tag">Tools: SolidWorks, 3D Printing</span>
+            <span class="tag">Focus: Aerodynamic/Thermal Analysis</span>
           </div>
           <a class="read-more" href="rocket-jet-vane.html" aria-label="Read more about Jet Vane Rocket project">Read More →</a>
         </div>
       </div>
 
-      <!-- LANDING GEAR -->
+      <div class="project-card">
+        <img
+          src="chassisfea.png"
+          alt="FEA mesh and stress distribution mapping on a vehicle chassis"
+          class="project-image"
+          loading="lazy"
+        />
+        <div class="project-content">
+          <h3>Car Chassis FEA Analysis & Redesign</h3>
+          <p>
+            Conducted Finite Element Analysis (FEA) on a car chassis to map stress distribution as well as bending and torsional stiffness[cite: 10, 11]. Optimized the chassis geometry to achieve a 15.8% mass reduction while maintaining stiffness within 8% of the original design, verified through mesh independence studies[cite: 11].
+          </p>
+          <div class="tag-row">
+            <span class="tag">Role: Solo</span>
+            <span class="tag">Tools: FEA</span>
+            <span class="tag">Focus: Structural Optimization</span>
+          </div>
+          <a class="read-more" href="chassis-fea.html" aria-label="Read more about Chassis FEA project">Read More →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img
+          src="enginebracket.png"
+          alt="ANSYS Workbench topology optimization of an aircraft engine bracket"
+          class="project-image"
+          loading="lazy"
+        />
+        <div class="project-content">
+          <h3>Aircraft Engine Loading Bracket Topology Optimization</h3>
+          <p>
+            Performed structural analysis and topology optimization using ANSYS Workbench, achieving a 51.1% mass reduction for FDM printing while maintaining structural integrity[cite: 20]. Evaluated four distinct static structural load cases (vertical, horizontal, angled, and torsional) to successfully prevent material yield under all peak loads[cite: 20, 21].
+          </p>
+          <div class="tag-row">
+            <span class="tag">Role: Solo</span>
+            <span class="tag">Tools: ANSYS Workbench</span>
+            <span class="tag">Focus: Topology Optimization</span>
+          </div>
+          <a class="read-more" href="engine-bracket.html" aria-label="Read more about Engine Bracket project">Read More →</a>
+        </div>
+      </div>
+
       <div class="project-card">
         <img
           src="landinggeardesign.png"
@@ -245,61 +321,19 @@
           loading="lazy"
         />
         <div class="project-content">
-          <h3>Landing Gear Analysis & Design</h3>
+          <h3>Retractable Landing Gear Design Project</h3>
           <p>
-            Led a 5-person team through concept, simulation, and kinematic analysis; preliminary model in Working Model followed by
-            detailed component design and evaluation in NX.
+            Designed a retractable landing gear system using Siemens NX and kinematic analysis to meet motion and structural requirements[cite: 9]. Produced a detailed engineering report validating design accuracy and linkage performance[cite: 9].
           </p>
           <div class="tag-row">
             <span class="tag">Role: Team Lead</span>
-            <span class="tag">Tools: Working Model, NX</span>
+            <span class="tag">Tools: Siemens NX</span>
             <span class="tag">Focus: Kinematics</span>
           </div>
           <a class="read-more" href="landinggear.html" aria-label="Read more about Landing Gear project">Read More →</a>
         </div>
       </div>
 
-      <!-- AMP STAND -->
-      <div class="project-card">
-        <img src="ampcad.png" alt="Exploded CAD view of rotatable guitar amp stand" class="project-image" loading="lazy" />
-        <div class="project-content">
-          <h3>3D‑Printed Rotatable Amp Stand</h3>
-          <p>
-            Designed a modular stand to rotate and tilt a 12 lb guitar amplifier, optimized for strength, ease of manufacture,
-            and simple assembly.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Role: Sole Designer</span>
-            <span class="tag">Tools: NX</span>
-            <span class="tag">Focus: DFM/DFA</span>
-          </div>
-          <a class="read-more" href="amp-stand.html" aria-label="Read more about Amp Stand project">Read More →</a>
-        </div>
-      </div>
-
-      <!-- HOT AIR BALLOON -->
-      <div class="project-card">
-        <img
-          src="hotairballoon.png"
-          alt="Hot air balloon analysis visuals including force balance and stability charts"
-          class="project-image"
-          loading="lazy"
-        />
-        <div class="project-content">
-          <h3>Hot Air Balloon Project</h3>
-          <p>
-            Led analysis for a team of 5 on CG, buoyant force, weight distribution, and vertical acceleration to assess lift and stability.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Role: Analysis Lead</span>
-            <span class="tag">Tools: Excel/Math</span>
-            <span class="tag">Focus: Fluid Mechanics</span>
-          </div>
-          <a class="read-more" href="hotairballoon.pdf" aria-label="Open Hot Air Balloon project PDF">Read More →</a>
-        </div>
-      </div>
-
-      <!-- TURBINE BLADE MATERIALS -->
       <div class="project-card">
         <img
           src="turbineblade.png"
@@ -310,13 +344,12 @@
         <div class="project-content">
           <h3>Jet Engine Turbine Blade Material Selection</h3>
           <p>
-            Evaluated candidate materials for high-temperature turbine blades, balancing creep resistance, mechanical strength,
-            and manufacturability as part of a materials science project.
+            Conducted a detailed material selection analysis for a jet engine turbine blade, considering high-temperature and high-pressure conditions[cite: 12]. Evaluated and recommended Ni-based single crystal superalloys based on their properties like melting point, creep-rupture life, and corrosion resistance[cite: 13].
           </p>
           <div class="tag-row">
-            <span class="tag">Role: Research & Selection</span>
-            <span class="tag">Tools: Literature Review</span>
-            <span class="tag">Focus: Materials</span>
+            <span class="tag">Role: Solo</span>
+            <span class="tag">Tools: Material Analysis</span>
+            <span class="tag">Focus: High-Temp Materials</span>
           </div>
           <a class="read-more" href="jetengine.pdf" aria-label="Open Jet Engine materials selection PDF">Read More →</a>
         </div>
@@ -326,7 +359,6 @@
     <section id="products" aria-labelledby="products-heading">
       <h2 id="products-heading">Product & Accessory Designs</h2>
       <div class="mini-grid">
-        <!-- Phone Stand -->
         <div class="mini-card">
           <div class="thumb-row">
             <img src="phonestand.png" class="thumb lightboxable" alt="Compact phone stand render, front view" loading="lazy" />
@@ -336,7 +368,6 @@
           <p class="muted">Small iPhone 12 mini stand with fixed support and charger cable cutout. Designed in NX.</p>
         </div>
 
-        <!-- Katana Holder -->
         <div class="mini-card">
           <div class="thumb-row three">
             <img src="katana.png" class="thumb lightboxable" alt="Wall-mounted katana holder render front" loading="lazy" />
@@ -347,7 +378,6 @@
           <p class="muted">3D printed support with bottom fillet and high infill for strength. Designed in CATIA V5.</p>
         </div>
 
-        <!-- Perfume Mat & Display -->
         <div class="mini-card">
           <div class="thumb-row three">
             <img src="perfume.png" class="thumb lightboxable" alt="Perfume display tray with hex pattern" loading="lazy" />
@@ -358,7 +388,6 @@
           <p class="muted">Slip-proof tray with hexagon pattern to reduce material while keeping stiffness. Designed in CATIA V5.</p>
         </div>
 
-        <!-- Perfume Cap -->
         <div class="mini-card">
           <div class="thumb-row">
             <img src="perfumecap.png" class="thumb lightboxable" alt="Replica bottle with custom snap-fit cap" loading="lazy" />
@@ -368,7 +397,6 @@
           <p class="muted">Snap-fit cap designed to pair with Replica perfume bottles. Designed in CATIA V5.</p>
         </div>
 
-        <!-- Pill Bottle -->
         <div class="mini-card">
           <div class="thumb-row">
             <img src="bottle.png" class="thumb lightboxable" alt="Pill bottle CAD render" loading="lazy" />
@@ -384,7 +412,6 @@
           <p class="muted">Bottle and cap using a buttress thread profile for improved seal/leak resistance. Designed in CATIA V5.</p>
         </div>
 
-        <!-- Wall Mount -->
         <div class="mini-card">
           <div class="thumb-row three">
             <img src="wallmount.png" class="thumb lightboxable" alt="iPhone wall mount front view" loading="lazy" />
@@ -397,7 +424,6 @@
       </div>
     </section>
 
-    <!-- Simple Lightbox (thumbs only) -->
     <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
       <button type="button" id="lightboxClose" aria-label="Close preview">Close ✕</button>
       <img alt="Preview" id="lightboxImg" />
