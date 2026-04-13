@@ -158,8 +158,8 @@
     <section>
       <h2>Key Analysis & Design Highlights</h2>
       <ul>
-        <li><strong>Model Simplification:</strong> Replaced complex fastener holes with bonded contacts and idealized suspension mounts using square split patches to ensure high-quality meshing and reduce computational anomalies.</li>
-        <li><strong>Center of Gravity Adjustment:</strong> Implemented a remote point mass of 9,463.75 kg to accurately shift the chassis COG to the required (4.5m, 0m, 0.4m) coordinates.</li>
+        <li><strong>Model Simplification:</strong> Replaced complex fastener holes with bonded contacts and idealized suspension mounts using square split patches to ensure high-quality meshing and reduce stress singularities.</li>
+        <li><strong>Center of Gravity Adjustment:</strong> Implemented a remote point mass of 9,463.75 kg to accurately shift the chassis COG to the required (4.5m, 0m, 0.4m) XYZ coordinates.</li>
         <li><strong>Mesh Independence Studies:</strong> Conducted 10 levels of progressive refinement (down to 10mm global and 7.5mm local sizing) to ensure convergence of global stress (~51 MPa), bending stiffness (~90 kN/m), and torsional stiffness (~490 N-m/deg).</li>
         <li><strong>Strategic Weight Reduction:</strong> Cross-referenced stress contour plots to identify regions of consistently low stress. Removed material via circular extrusions along the C-beams, cross-members, and towing jaw to avoid high-stress concentrations.</li>
       </ul>
