@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autonomous Open-Air Gondola Carriage</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #222;
+      background: linear-gradient(#fafafa, #eaeaea);
+    }
+
+    nav {
+      background: #2f343a;
+      padding: 1em;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #aaa;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: #fff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 1em;
+    }
+
+    header.hero {
+      text-align: center;
+      padding: 2em 1em 3em;
+      background: linear-gradient(135deg, #e3f2fd, #f5f5f5);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 2em;
+    }
+
+    .hero img {
+      max-width: 300px;
+      width: 80%;
+      height: auto;
+      margin: 0 auto 1em;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      transition: transform 0.2s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 1.5em;
+      margin: 2em 0;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      background: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .gallery-grid figcaption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.5em;
+      text-align: center;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 1.5em;
+      font-size: 0.9em;
+    }
+
+    h1 {
+      margin-bottom: 0.4em;
+    }
+
+    .meta {
+      color: #666;
+      font-size: 0.95em;
+      margin-bottom: 1em;
+    }
+
+    .spec-table {
+      width: 100%;
+      margin: 1.5em 0;
+      border-collapse: collapse;
+    }
+
+    .spec-table th, .spec-table td {
+      border: 1px solid #ccc;
+      padding: 0.75em 1em;
+      text-align: left;
+    }
+
+    .spec-table th {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="https://www.linkedin.com/in/william-nagassar-903395218/" target="_blank">LinkedIn</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <img src="gondola-render.png" alt="Realistic rendering of the Gondola Carriage System" />
+      <h1>Autonomous Open-Air Gondola</h1>
+      <div class="meta">MECE 3390U Mechatronics • Ontario Tech University • Team Project</div>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        This project involved the design and prototyping of an autonomous open-air gondola carriage system capable of traversing a suspended rope track. The system integrates mechanical, electrical, and control components using an Arduino Due microcontroller. The gondola was programmed to travel along the rope, perform designated stopping actions, and return to its starting position completely autonomously while maintaining stability during both ascent and descent on inclines up to 30°.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Design Highlights</h2>
+      <ul>
+        <li><strong>Dual-Motor Clamping Mechanism:</strong> Implemented a rigid two-wheel gear-driven mechanism with internal ridges (teeth) to maintain consistent compression on the rope, eliminating slipping issues.</li>
+        <li><strong>Encoder-Based Odometry:</strong> Replaced external sensors with an open-loop kinematic algorithm that tracks encoder pulses to calculate exact distances for precise stops and direction reversals.</li>
+        <li><strong>Egg-Carton Chassis:</strong> Designed a compartmented, low-center-of-gravity chassis that safely secures passengers while preventing lateral rotation and oscillation around the rope.</li>
+        <li><strong>Optimized Power System:</strong> Upgraded from a high-resistance 9V battery setup to a single 7.4V LiPo battery, cutting power supply weight by 77% while providing sufficient current to prevent motor stalling on inclines.</li>
+        <li><strong>Design for Manufacturing:</strong> Utilized 3D-printed PLA with modular geometry limited to 45-60° overhangs to minimize supports, and strategically used 100% infill for shafts to resist torsional shear forces.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Specifications</h2>
+      <table class="spec-table">
+        <tr><th>Microcontroller</th><td>Arduino Due</td></tr>
+        <tr><th>Motor Controller</th><td>Deek-Robot L298P Motor Shield</td></tr>
+        <tr><th>Actuators</th><td>2x FIT0485 Geared Motors with Encoders</td></tr>
+        <tr><th>Power Source</th><td>900 mAh 2S 30C LiPo Battery (7.4V)</td></tr>
+        <tr><th>Max Load Capacity</th><td>0.454 kg (including passengers and components)</td></tr>
+        <tr><th>Performance (30° Incline)</th><td>Completed full round trip autonomously in 53 seconds</td></tr>
+        <tr><th>Material</th><td>3D Printed PLA (15% Gyroid infill body, 100% rectilinear shafts)</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <figure>
+          <img src="gondola-assembly.png" alt="CAD Assembly Drawing of the Gondola" />
+          <figcaption>Gondola CAD Assembly</figcaption>
+        </figure>
+        <figure>
+          <img src="gondola-mechanism.png" alt="Dual-motor gear driven clamping mechanism" />
+          <figcaption>Dual-Motor Clamping Mechanism</figcaption>
+        </figure>
+        <figure>
+          <img src="gondola-chassis.png" alt="Egg-carton inspired open-air chassis" />
+          <figcaption>Low-COG Passenger Chassis</figcaption>
+        </figure>
+        <figure>
+          <img src="gondola-electronics.png" alt="Arduino Due and Motor Shield hardware setup" />
+          <figcaption>Electrical Hardware Setup</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Project Reports & Code</h2>
+      <ul>
+        <li><a href="gondola-report.pdf" target="_blank">View the Full Engineering Report (PDF)</a></li>
+        <li><a href="gondola-code.ino" target="_blank">View the Arduino Automation Algorithm (C++)</a></li>
+      </ul>
+    </section>
+
+    <a class="back" href="index.html">← Back to Portfolio</a>
+  </main>
+</body>
+</html>
