@@ -151,14 +151,14 @@
     <section>
       <h2>Overview</h2>
       <p>
-        This project involved the design and prototyping of an autonomous open-air gondola carriage system capable of traversing a suspended rope track. The system integrates mechanical, electrical, and control components using an Arduino Due microcontroller. The gondola was programmed to travel along the rope, perform designated stopping actions, and return to its starting position completely autonomously while maintaining stability during both ascent and descent on inclines up to 30°.
+        This project involved the design and prototyping of an autonomous open-air gondola carriage system capable of traversing a suspended rope track at a 30° angle. The system integrates mechanical, electrical, and control components using an Arduino Due microcontroller. The gondola was programmed to travel along the rope, perform designated stopping actions, and return to its starting position completely autonomously while maintaining stability during both the ascending and descending pahse.
       </p>
     </section>
 
     <section>
       <h2>Key Design Highlights</h2>
       <ul>
-        <li><strong>Dual-Motor Clamping Mechanism:</strong> Implemented a rigid two-wheel gear-driven mechanism with internal ridges (teeth) to maintain consistent compression on the rope, eliminating slipping issues.</li>
+        <li><strong>Dual-Motor Clamping Mechanism:</strong> Implemented a rigid two-wheel gear-driven mechanism with internal ridges (teeth) to maintain consistent compression on the rope, eliminating traction issues and preventing the Gondola from sliding down the rope when no power is applied to the motors.</li>
         <li><strong>Encoder-Based Odometry:</strong> Replaced external sensors with an open-loop kinematic algorithm that tracks encoder pulses to calculate exact distances for precise stops and direction reversals.</li>
         <li><strong>Egg-Carton Chassis:</strong> Designed a compartmented, low-center-of-gravity chassis that safely secures passengers while preventing lateral rotation and oscillation around the rope.</li>
         <li><strong>Optimized Power System:</strong> Upgraded from a high-resistance 9V battery setup to a single 7.4V LiPo battery, cutting power supply weight by 77% while providing sufficient current to prevent motor stalling on inclines.</li>
@@ -175,7 +175,7 @@
         <tr><th>Power Source</th><td>900 mAh 2S 30C LiPo Battery (7.4V)</td></tr>
         <tr><th>Max Load Capacity</th><td>0.454 kg (including passengers and components)</td></tr>
         <tr><th>Performance (30° Incline)</th><td>Completed full round trip autonomously in 53 seconds</td></tr>
-        <tr><th>Material</th><td>3D Printed PLA (15% Gyroid infill body, 100% rectilinear shafts)</td></tr>
+        <tr><th>Material</th><td>3D Printed PLA (15% Gyroid infill body, 100% infill shafts)</td></tr>
       </table>
     </section>
 
