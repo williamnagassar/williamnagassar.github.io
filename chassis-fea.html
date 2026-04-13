@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FEA Analysis and Redesign of Car Chassis</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #222;
+      background: linear-gradient(#fafafa, #eaeaea);
+    }
+
+    nav {
+      background: #2f343a;
+      padding: 1em;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #aaa;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: #fff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 1em;
+    }
+
+    header.hero {
+      text-align: center;
+      padding: 2em 1em 3em;
+      background: linear-gradient(135deg, #e3f2fd, #f5f5f5);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 2em;
+    }
+
+    .hero img {
+      max-width: 300px;
+      width: 80%;
+      height: auto;
+      margin: 0 auto 1em;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      transition: transform 0.2s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 1.5em;
+      margin: 2em 0;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      background: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .gallery-grid figcaption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.5em;
+      text-align: center;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 1.5em;
+      font-size: 0.9em;
+    }
+
+    h1 {
+      margin-bottom: 0.4em;
+    }
+
+    .meta {
+      color: #666;
+      font-size: 0.95em;
+      margin-bottom: 1em;
+    }
+
+    .spec-table {
+      width: 100%;
+      margin: 1.5em 0;
+      border-collapse: collapse;
+    }
+
+    .spec-table th, .spec-table td {
+      border: 1px solid #ccc;
+      padding: 0.75em 1em;
+      text-align: left;
+    }
+
+    .spec-table th {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="https://www.linkedin.com/in/william-nagassar-903395218/" target="_blank">LinkedIn</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <img src="fea-chassis-hero.png" alt="FEA contour plot of car chassis" />
+      <h1>FEA Analysis and Redesign of Car Chassis</h1>
+      <div class="meta">MECE 4290U • Ontario Tech University • Individual Project</div>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        This project involved analyzing the structural performance of a car chassis using Finite Element Methods (FEM) in ANSYS. The goal was to evaluate global and local stress, bending stiffness, and torsional stiffness while simulating a total vehicle mass of 10,000 kg with a specific center of gravity. Following the baseline analysis, the chassis was successfully redesigned to reduce its mass by over 15% without significant loss of structural integrity.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Analysis & Design Highlights</h2>
+      <ul>
+        <li><strong>Model Simplification:</strong> Replaced complex fastener holes with bonded contacts and idealized suspension mounts using square split patches to ensure high-quality meshing and reduce computational anomalies.</li>
+        <li><strong>Center of Gravity Adjustment:</strong> Implemented a remote point mass of 9,463.75 kg to accurately shift the chassis COG to the required (4.5m, 0m, 0.4m) coordinates.</li>
+        <li><strong>Mesh Independence Studies:</strong> Conducted 10 levels of progressive refinement (down to 10mm global and 7.5mm local sizing) to ensure convergence of global stress (~51 MPa), bending stiffness (~90 kN/m), and torsional stiffness (~490 N-m/deg).</li>
+        <li><strong>Strategic Weight Reduction:</strong> Cross-referenced stress contour plots to identify regions of consistently low stress. Removed material via circular extrusions along the C-beams, cross-members, and towing jaw to avoid high-stress concentrations.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Specifications & Results</h2>
+      <table class="spec-table">
+        <tr><th>Material</th><td>Structural Steel (E = 210 GPa, ν = 0.3, ρ = 7850 kg/m³)</td></tr>
+        <tr><th>Target Mass</th><td>10,000 kg (using Remote Point Mass)</td></tr>
+        <tr><th>Original Chassis Mass</th><td>540.99 kg</td></tr>
+        <tr><th>Redesigned Chassis Mass</th><td>467 kg (15.8% Reduction)</td></tr>
+        <tr><th>Bending Stiffness (Original vs Redesign)</th><td>89.6 kN/m → 82.5 kN/m (8% decrease)</td></tr>
+        <tr><th>Torsional Stiffness (Original vs Redesign)</th><td>463.8 N-m/deg → 436.4 N-m/deg (6% decrease)</td></tr>
+        <tr><th>Factor of Safety</th><td>4.81 (Maximum stress well below yield strength)</td></tr>
+        <tr><th>Software Used</th><td>SolidWorks (CAD), ANSYS (FEA)</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <figure>
+          <img src="fea-mesh.png" alt="Mesh with 200mm Global Sizing and 100mm Local Sizing" />
+          <figcaption>Progressive Mesh Refinement Strategy</figcaption>
+        </figure>
+        <figure>
+          <img src="fea-stress-limit.png" alt="Stress Distribution on Chassis with 4 MPa Limit" />
+          <figcaption>True Stress Distribution (4 MPa Limit)</figcaption>
+        </figure>
+        <figure>
+          <img src="fea-bending.png" alt="Deformation Contour Plot of Chassis under Bending" />
+          <figcaption>Bending Deformation Contour</figcaption>
+        </figure>
+        <figure>
+          <img src="fea-redesign-cuts.png" alt="Extrusions along C-beam avoiding high stress areas" />
+          <figcaption>Redesign: Material Removal at Low-Stress Regions</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Project Reports</h2>
+      <ul>
+        <li><a href="fea-chassis-report.pdf" target="_blank">View the Full FEA Analysis Report (PDF)</a></li>
+      </ul>
+    </section>
+
+    <a class="back" href="index.html">← Back to Portfolio</a>
+  </main>
+</body>
+</html>
