@@ -185,7 +185,7 @@
     <section>
       <h2>Key Design Highlights</h2>
       <ul>
-        <li><strong>Rigorous Load Testing:</strong> Evaluated the bracket against four independent static load cases (Vertical, Horizontal, Off-Axis, and Torsional) with forces up to 9,500 lbs and moments up to 5,000 lb-in applied directly to the pin geometry.</li>
+        <li><strong>Rigorous Load Testing:</strong> Evaluated the bracket against four independent static load cases (Vertical, Horizontal, Angled, and Torsional) with forces up to 9,500 lbs and moments up to 5,000 lb-in applied directly to the pin geometry.</li>
         <li><strong>Iterative Optimization Weighting:</strong> Discovered that the vertical load case generated significantly higher maximum stress (99.9 ksi). To prevent yielding in the final design, I iteratively increased this load case's solver weight by a factor of 5 during the optimization process.</li>
         <li><strong>Massive Weight Reduction:</strong> Successfully exceeded the project target by achieving a <strong>51.1% mass reduction</strong>, dropping the bracket's weight from 4.52 lbs down to just 2.31 lbs.</li>
         <li><strong>Structural Validation:</strong> Re-simulated the smoothed, optimized geometry against all original load cases to confirm it would not yield. I determined that the lowest factor of safety was 1.14, noting that future iterations for real-world aerospace applications would target a minimum 1.5 FOS to account for dynamic loading and FDM material anisotropy.</li>
@@ -208,7 +208,7 @@
           <p><strong>Factor of Safety:</strong> 1.88</p>
         </div>
         <div class="load-card">
-          <h4>Case 3: Off-Axis</h4>
+          <h4>Case 3: Angled</h4>
           <p><strong>Load:</strong> 9,500 lbs (@ 42°)</p>
           <p><strong>Max Stress:</strong> 70.0 ksi</p>
           <p><strong>Factor of Safety:</strong> 1.87</p>
