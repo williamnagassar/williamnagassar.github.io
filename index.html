@@ -80,9 +80,9 @@
       }
 .project-image {
   width: 100%;
-  height: 260px;
-  object-fit: cover;
-  object-position: top; /* Forces the top of the image to stay visible */
+  height: auto; /* Let the image breathe */
+  aspect-ratio: 4 / 3; /* Or 16/9, depending on your render dimensions */
+  object-fit: cover; 
   display: block;
   margin: 0;
 }
