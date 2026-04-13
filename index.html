@@ -67,45 +67,62 @@
       .muted { color: var(--text-muted); }
 
       /* PROJECT CARDS */
-      .project-card {
+      .projects-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-        align-items: stretch;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+        margin-bottom: 2em;
+      }
+
+      .project-card {
+        display: flex;
+        flex-direction: column;
         background: var(--card);
         border-radius: 10px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-        margin-bottom: 2em;
         overflow: hidden;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
-.project-image {
-  width: 100%;
-  height: 100%; /* Matches the height of the text column */
-  min-height: 300px; /* Gives taller renders the breathing room they need */
-  object-fit: contain; /* GUARANTEES zero cropping */
-  object-position: center; /* Keeps the render perfectly centered */
-  background-color: var(--card); /* Blends any empty space seamlessly */
-  display: block;
-  margin: 0;
-}
-      .project-content { padding: 1.1em 1.25em 1.25em; }
-      .project-content p { color: #444; margin: 0.35em 0 0.75em; }
-
-      .read-more {
-        display: inline-block;
-        margin-top: 0.4em;
-        background: var(--accent);
-        color: white;
-        padding: 0.55em 0.95em;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: transform 0.15s ease, background 0.2s ease;
+      
+      .project-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 14px rgba(0,0,0,0.10);
       }
-      .read-more:hover { background: #0d133d; transform: translateY(-1px); }
 
-      /* Tags (Role / Tools) */
-      .tag-row { display: flex; flex-wrap: wrap; gap: 0.5em; margin-top: 0.6em; }
+      .project-image {
+        width: 100%;
+        height: 280px; 
+        object-fit: contain; /* GUARANTEES zero cropping */
+        object-position: center; 
+        background-color: #fafafa; /* Slight contrast from pure white card */
+        display: block;
+        margin: 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .project-content { 
+        padding: 1.25em;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; /* Allows the content area to fill vertical space */
+      }
+      
+      .project-content h3 {
+        line-height: 1.3;
+      }
+
+      .project-content p { 
+        color: #444; 
+        margin: 0.35em 0 1em; 
+      }
+
+      .tag-row { 
+        display: flex; 
+        flex-wrap: wrap; 
+        gap: 0.5em; 
+        margin-bottom: 1.25em; 
+      }
+
       .tag {
         font-size: 0.82rem;
         background: #eef1ff;
@@ -114,6 +131,24 @@
         padding: 0.2em 0.5em;
         border-radius: 999px;
         white-space: nowrap;
+      }
+
+      .read-more {
+        display: inline-block;
+        background: var(--accent);
+        color: white;
+        padding: 0.55em 0.95em;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.15s ease, background 0.2s ease;
+        margin-top: auto; /* Pushes the button to the bottom of the card */
+        align-self: flex-start; /* Keeps the button from stretching */
+      }
+      
+      .read-more:hover { 
+        background: #0d133d; 
+        transform: translateY(-1px); 
       }
 
       /* MINI GRID */
@@ -148,11 +183,21 @@
       }
 
       @media (max-width: 900px) {
-        .project-image { height: 220px; }
+        .projects-grid {
+          gap: 1.5em;
+        }
+        .project-image { 
+          height: 240px; 
+        }
       }
+      
       @media (max-width: 768px) {
-        .project-card { grid-template-columns: 1fr; }
-        .project-image { height: 200px; }
+        .projects-grid { 
+          grid-template-columns: 1fr; /* Stacks cards to 1 column on mobile */
+        }
+        .project-image { 
+          height: 260px; 
+        }
       }
 
       .lightbox {
@@ -190,171 +235,173 @@
     <section id="projects" aria-labelledby="projects-heading">
       <h2 id="projects-heading">Projects</h2>
 
-      <div class="project-card">
-        <img
-          src="lobepump.png"
-          alt="CAD model and physical prototype of FDM-optimized lobe pump"
-          class="project-image"
-          loading="lazy"
-        />
-        <div class="project-content">
-          <h3>FDM-Optimized Manually Operated Lobe Pump</h3>
-          <p>
-            Designed a highly toleranced lobe pump for Material Extrusion (MEX) using SolidWorks, applying DFAM principles like Gothic arch fluid ports to eliminate internal supports and reduce print time by 12%. Optimized material efficiency in Bambu Studio for a 70% mass reduction and validated a PLA prototype achieving a leak-free volumetric flow rate of 112.57 mL/s.
-          </p>
-          <div class="tag-row" aria-label="Project tags">
-            <span class="tag">Role: Team Lead</span>
-            <span class="tag">Tools: SolidWorks, Bambu Studio</span>
-            <span class="tag">Focus: DFAM, Testing</span>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img
+            src="lobepump.png"
+            alt="CAD model and physical prototype of FDM-optimized lobe pump"
+            class="project-image"
+            loading="lazy"
+          />
+          <div class="project-content">
+            <h3>FDM-Optimized Manually Operated Lobe Pump</h3>
+            <p>
+              Designed a highly toleranced lobe pump for Material Extrusion (MEX) using SolidWorks, applying DFAM principles like Gothic arch fluid ports to eliminate internal supports and reduce print time by 12%. Optimized material efficiency in Bambu Studio for a 70% mass reduction and validated a PLA prototype achieving a leak-free volumetric flow rate of 112.57 mL/s.
+            </p>
+            <div class="tag-row" aria-label="Project tags">
+              <span class="tag">Role: Team Lead</span>
+              <span class="tag">Tools: SolidWorks, Bambu Studio</span>
+              <span class="tag">Focus: DFAM, Testing</span>
+            </div>
+            <a class="read-more" href="lobe-pump.html" aria-label="Read more about Lobe Pump project">Read More →</a>
           </div>
-          <a class="read-more" href="lobe-pump.html" aria-label="Read more about Lobe Pump project">Read More →</a>
         </div>
-      </div>
 
-      <div class="project-card">
-        <img
-          src="exoskeleton-project.png"
-          alt="Collage of a syringe-actuated exoskeleton arm: assembly render, exploded view, and prototype"
-          class="project-image"
-          loading="lazy"
-        />
-        <div class="project-content">
-          <h3>Exoskeleton Arm with Hand Grasper</h3>
-          <p>
-            Led design and prototyping of an ergonomic exoskeleton arm using FEA, 3D printing, and GD&T for CNC-machined parts. Oversaw all phases of the project, ensuring delivery of a functional physical prototype within 12 weeks.
-          </p>
-          <div class="tag-row" aria-label="Project tags">
-            <span class="tag">Role: Team Lead</span>
-            <span class="tag">Tools: NX, 3D Printing, FEA</span>
-            <span class="tag">Focus: GD&T, DFM/DFA</span>
+        <div class="project-card">
+          <img
+            src="exoskeleton-project.png"
+            alt="Collage of a syringe-actuated exoskeleton arm: assembly render, exploded view, and prototype"
+            class="project-image"
+            loading="lazy"
+          />
+          <div class="project-content">
+            <h3>Exoskeleton Arm with Hand Grasper</h3>
+            <p>
+              Led design and prototyping of an ergonomic exoskeleton arm using FEA, 3D printing, and GD&T for CNC-machined parts. Oversaw all phases of the project, ensuring delivery of a functional physical prototype within 12 weeks.
+            </p>
+            <div class="tag-row" aria-label="Project tags">
+              <span class="tag">Role: Team Lead</span>
+              <span class="tag">Tools: NX, 3D Printing, FEA</span>
+              <span class="tag">Focus: GD&T, DFM/DFA</span>
+            </div>
+            <a class="read-more" href="exoskeleton.html" aria-label="Read more about Exoskeleton Arm project">Read More →</a>
           </div>
-          <a class="read-more" href="exoskeleton.html" aria-label="Read more about Exoskeleton Arm project">Read More →</a>
         </div>
-      </div>
 
-      <div class="project-card">
-        <img
-          src="gondolacarriage.png"
-          alt="Open-air gondola carriage CAD model and prototype testing"
-          class="project-image"
-          loading="lazy"
-        />
-        <div class="project-content">
-          <h3>Open-Air Gondola Carriage System</h3>
-          <p>
-            Designed a lightweight 346g dual N20 gear-driven rope-climbing mechanism, applying DFM principles for FDM printing on a Bambu P1S to minimize internal supports. Performed FMEA to resolve critical traction and stability risks, achieving 100% reliability during 30° inclined dynamic load testing.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Role: Team Lead</span>
-            <span class="tag">Tools: Bambu Studio, FDM</span>
-            <span class="tag">Focus: DFM, FMEA, Load Testing</span>
+        <div class="project-card">
+          <img
+            src="gondolacarriage.png"
+            alt="Open-air gondola carriage CAD model and prototype testing"
+            class="project-image"
+            loading="lazy"
+          />
+          <div class="project-content">
+            <h3>Open-Air Gondola Carriage System</h3>
+            <p>
+              Designed a lightweight 346g dual N20 gear-driven rope-climbing mechanism, applying DFM principles for FDM printing on a Bambu P1S to minimize internal supports. Performed FMEA to resolve critical traction and stability risks, achieving 100% reliability during 30° inclined dynamic load testing.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Role: Team Lead</span>
+              <span class="tag">Tools: Bambu Studio, FDM</span>
+              <span class="tag">Focus: DFM, FMEA, Load Testing</span>
+            </div>
+            <a class="read-more" href="gondola-carriage.html" aria-label="Read more about Gondola Carriage project">Read More →</a>
           </div>
-          <a class="read-more" href="gondola-carriage.html" aria-label="Read more about Gondola Carriage project">Read More →</a>
         </div>
-      </div>
 
-      <div class="project-card">
-        <img
-          src="rocket-jet-vane.png"
-          alt="Experimental solid-fuel rocket CAD with jet vane control mechanism"
-          class="project-image"
-          loading="lazy"
-        />
-        <div class="project-content">
-          <h3>Experimental Rocket for Jet Vane Development</h3>
-          <p>
-            Lead development of a solid fuel test vehicle for validating jet vane thrust vector control technology. Coordinated mounting mechanism design with the team to ensure structural and thermal compatibility.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Role: Design & Fabrication</span>
-            <span class="tag">Tools: SolidWorks, 3D Printing</span>
-            <span class="tag">Focus: Aerodynamic/Thermal Analysis</span>
+        <div class="project-card">
+          <img
+            src="rocket-jet-vane.png"
+            alt="Experimental solid-fuel rocket CAD with jet vane control mechanism"
+            class="project-image"
+            loading="lazy"
+          />
+          <div class="project-content">
+            <h3>Experimental Rocket for Jet Vane Development</h3>
+            <p>
+              Lead development of a solid fuel test vehicle for validating jet vane thrust vector control technology. Coordinated mounting mechanism design with the team to ensure structural and thermal compatibility.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Role: Design & Fabrication</span>
+              <span class="tag">Tools: SolidWorks, 3D Printing</span>
+              <span class="tag">Focus: Aerodynamic/Thermal Analysis</span>
+            </div>
+            <a class="read-more" href="rocket-jet-vane.html" aria-label="Read more about Jet Vane Rocket project">Read More →</a>
           </div>
-          <a class="read-more" href="rocket-jet-vane.html" aria-label="Read more about Jet Vane Rocket project">Read More →</a>
         </div>
-      </div>
 
-      <div class="project-card">
-        <img
-          src="chassisfea.png"
-          alt="FEA mesh and stress distribution mapping on a vehicle chassis"
-          class="project-image"
-          loading="lazy"
-        />
-        <div class="project-content">
-          <h3>Car Chassis FEA Analysis & Redesign</h3>
-          <p>
-            Conducted Finite Element Analysis (FEA) on a car chassis to map stress distribution as well as bending and torsional stiffness. Optimized the chassis geometry to achieve a 15.8% mass reduction while maintaining stiffness within 8% of the original design, verified through mesh independence studies.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Role: Solo</span>
-            <span class="tag">Tools: FEA</span>
-            <span class="tag">Focus: Structural Optimization</span>
+        <div class="project-card">
+          <img
+            src="chassisfea.png"
+            alt="FEA mesh and stress distribution mapping on a vehicle chassis"
+            class="project-image"
+            loading="lazy"
+          />
+          <div class="project-content">
+            <h3>Car Chassis FEA Analysis & Redesign</h3>
+            <p>
+              Conducted Finite Element Analysis (FEA) on a car chassis to map stress distribution as well as bending and torsional stiffness. Optimized the chassis geometry to achieve a 15.8% mass reduction while maintaining stiffness within 8% of the original design, verified through mesh independence studies.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Role: Solo</span>
+              <span class="tag">Tools: FEA</span>
+              <span class="tag">Focus: Structural Optimization</span>
+            </div>
+            <a class="read-more" href="chassis-fea.html" aria-label="Read more about Chassis FEA project">Read More →</a>
           </div>
-          <a class="read-more" href="chassis-fea.html" aria-label="Read more about Chassis FEA project">Read More →</a>
         </div>
-      </div>
 
-      <div class="project-card">
-        <img
-          src="enginebracket.png"
-          alt="ANSYS Workbench topology optimization of an aircraft engine bracket"
-          class="project-image"
-          loading="lazy"
-        />
-        <div class="project-content">
-          <h3>Aircraft Engine Loading Bracket Topology Optimization</h3>
-          <p>
-            Performed structural analysis and topology optimization using ANSYS Workbench, achieving a 51.1% mass reduction for FDM printing while maintaining structural integrity. Evaluated four distinct static structural load cases (vertical, horizontal, angled, and torsional) to successfully prevent material yield under all peak loads.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Role: Solo</span>
-            <span class="tag">Tools: ANSYS Workbench</span>
-            <span class="tag">Focus: Topology Optimization</span>
+        <div class="project-card">
+          <img
+            src="enginebracket.png"
+            alt="ANSYS Workbench topology optimization of an aircraft engine bracket"
+            class="project-image"
+            loading="lazy"
+          />
+          <div class="project-content">
+            <h3>Aircraft Engine Loading Bracket Topology Optimization</h3>
+            <p>
+              Performed structural analysis and topology optimization using ANSYS Workbench, achieving a 51.1% mass reduction for FDM printing while maintaining structural integrity. Evaluated four distinct static structural load cases (vertical, horizontal, angled, and torsional) to successfully prevent material yield under all peak loads.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Role: Solo</span>
+              <span class="tag">Tools: ANSYS Workbench</span>
+              <span class="tag">Focus: Topology Optimization</span>
+            </div>
+            <a class="read-more" href="engine-bracket.html" aria-label="Read more about Engine Bracket project">Read More →</a>
           </div>
-          <a class="read-more" href="engine-bracket.html" aria-label="Read more about Engine Bracket project">Read More →</a>
         </div>
-      </div>
 
-      <div class="project-card">
-        <img
-          src="landinggeardesign.png"
-          alt="Landing gear kinematic mechanism diagram and SolidWorks model"
-          class="project-image"
-          loading="lazy"
-        />
-        <div class="project-content">
-          <h3>Retractable Landing Gear Design Project</h3>
-          <p>
-            Designed a retractable landing gear system using Siemens NX and kinematic analysis to meet motion and structural requirements. Produced a detailed engineering report validating design accuracy and linkage performance.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Role: Team Lead</span>
-            <span class="tag">Tools: Siemens NX</span>
-            <span class="tag">Focus: Kinematics</span>
+        <div class="project-card">
+          <img
+            src="landinggeardesign.png"
+            alt="Landing gear kinematic mechanism diagram and SolidWorks model"
+            class="project-image"
+            loading="lazy"
+          />
+          <div class="project-content">
+            <h3>Retractable Landing Gear Design Project</h3>
+            <p>
+              Designed a retractable landing gear system using Siemens NX and kinematic analysis to meet motion and structural requirements. Produced a detailed engineering report validating design accuracy and linkage performance.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Role: Team Lead</span>
+              <span class="tag">Tools: Siemens NX</span>
+              <span class="tag">Focus: Kinematics</span>
+            </div>
+            <a class="read-more" href="landinggear.html" aria-label="Read more about Landing Gear project">Read More →</a>
           </div>
-          <a class="read-more" href="landinggear.html" aria-label="Read more about Landing Gear project">Read More →</a>
         </div>
-      </div>
 
-      <div class="project-card">
-        <img
-          src="turbineblade.png"
-          alt="Turbine blade materials comparison and selection chart for jet engine application"
-          class="project-image"
-          loading="lazy"
-        />
-        <div class="project-content">
-          <h3>Jet Engine Turbine Blade Material Selection</h3>
-          <p>
-            Conducted a detailed material selection analysis for a jet engine turbine blade, considering high-temperature and high-pressure conditions. Evaluated and recommended Ni-based single crystal superalloys based on their properties like melting point, creep-rupture life, and corrosion resistance.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Role: Solo</span>
-            <span class="tag">Tools: Material Analysis</span>
-            <span class="tag">Focus: High-Temp Materials</span>
+        <div class="project-card">
+          <img
+            src="turbineblade.png"
+            alt="Turbine blade materials comparison and selection chart for jet engine application"
+            class="project-image"
+            loading="lazy"
+          />
+          <div class="project-content">
+            <h3>Jet Engine Turbine Blade Material Selection</h3>
+            <p>
+              Conducted a detailed material selection analysis for a jet engine turbine blade, considering high-temperature and high-pressure conditions. Evaluated and recommended Ni-based single crystal superalloys based on their properties like melting point, creep-rupture life, and corrosion resistance.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Role: Solo</span>
+              <span class="tag">Tools: Material Analysis</span>
+              <span class="tag">Focus: High-Temp Materials</span>
+            </div>
+            <a class="read-more" href="jetengine.pdf" aria-label="Open Jet Engine materials selection PDF">Read More →</a>
           </div>
-          <a class="read-more" href="jetengine.pdf" aria-label="Open Jet Engine materials selection PDF">Read More →</a>
         </div>
       </div>
     </section>
