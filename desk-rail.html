@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3D-Printed Structural Desk Rail</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #222;
+      background: linear-gradient(#fafafa, #eaeaea);
+    }
+
+    nav {
+      background: #2f343a;
+      padding: 1em;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #aaa;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: #fff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 1em;
+    }
+
+    header.hero {
+      text-align: center;
+      padding: 2em 1em 3em;
+      background: linear-gradient(135deg, #e3f2fd, #f5f5f5);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 2em;
+    }
+
+    .hero img {
+      max-width: 300px;
+      width: 80%;
+      height: auto;
+      margin: 0 auto 1em;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      transition: transform 0.2s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 1.5em;
+      margin: 2em 0;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      background: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .gallery-grid figcaption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.5em;
+      text-align: center;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 1.5em;
+      font-size: 0.9em;
+    }
+
+    h1 {
+      margin-bottom: 0.4em;
+    }
+
+    .meta {
+      color: #666;
+      font-size: 0.95em;
+      margin-bottom: 1em;
+    }
+
+    .spec-table {
+      width: 100%;
+      margin: 1.5em 0;
+      border-collapse: collapse;
+    }
+
+    .spec-table th, .spec-table td {
+      border: 1px solid #ccc;
+      padding: 0.75em 1em;
+      text-align: left;
+    }
+
+    .spec-table th {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="https://www.linkedin.com/in/william-nagassar-903395218/" target="_blank">LinkedIn</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <img src="desk-rail-hero.png" alt="3D Printed Structural Desk Rail Collage" />
+      <h1>3D-Printed Structural Desk Rail</h1>
+      <div class="meta">Role: Solo • Tools: Onshape, Calc • Focus: Structural Integrity</div>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        When the original metal rail on my sliding desk tray broke, I engineered a custom 3D-printed structural replacement. The project required precise measurements of the wooden desk and existing mounting holes to ensure a perfect fit and smooth operation. The geometry was optimized for FDM manufacturing and validated using rigorous beam bending calculations to guarantee high stiffness and minimal deflection under the load of heavy typing and resting arms.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Design Highlights</h2>
+      <ul>
+        <li><strong>Hardware Integration:</strong> Implemented countersunk screw holes so the fastener heads sit flush, preventing them from catching on the sliding rail and stopping the mechanism.</li>
+        <li><strong>Custom Linear Bearings:</strong> Ingeniously utilized copper BBs inside the rail channel. These act as smooth ball bearings for easy sliding while keeping the tray locked securely in its track.</li>
+        <li><strong>Structural Validation:</strong> Performed beam bending calculations during the design phase to ensure the plastic replacement would match or exceed the rigidity of the broken metal part.</li>
+        <li><strong>Manufacturing Adaptability:</strong> Originally designed as a single large print utilizing the massive build volume of a Prusa XL. Later, I adapted the CAD to be modular, splitting it into two interlocking pieces secured with fasteners so it could be printed on a standard Bambu Lab P1S.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Specifications</h2>
+      <table class="spec-table">
+        <tr><th>CAD Software</th><td>Onshape</td></tr>
+        <tr><th>Manufacturing Method</th><td>Fused Deposition Modeling (FDM)</td></tr>
+        <tr><th>Primary Printer (Single Piece)</th><td>Prusa XL</td></tr>
+        <tr><th>Secondary Printer (Modular)</th><td>Bambu Lab P1S</td></tr>
+        <tr><th>Sliding Mechanism</th><td>Integrated Copper BBs</td></tr>
+        <tr><th>Mounting Hardware</th><td>Countersunk Screws</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <figure>
+          <img src="desk-rail-cad.png" alt="CAD assembly of the desk and rails" />
+          <figcaption>Full CAD Assembly in Onshape</figcaption>
+        </figure>
+        <figure>
+          <img src="desk-rail-section.png" alt="Cross-section CAD showing the countersunk screw and sliding mechanism" />
+          <figcaption>Cross-Section showing Countersink & BB Track</figcaption>
+        </figure>
+        <figure>
+          <img src="desk-rail-installed.png" alt="Photograph of the final 3D printed rail installed on the wooden desk" />
+          <figcaption>Final Installed Component</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <a class="back" href="index.html">← Back to Portfolio</a>
+  </main>
+</body>
+</html>
