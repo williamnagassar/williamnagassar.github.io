@@ -134,24 +134,31 @@
       background: #f0f0f0;
     }
 
-    .load-cases {
+    .load-case-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1em;
       margin-top: 1em;
+      margin-bottom: 2em;
     }
 
-    .load-case-card {
+    .load-card {
       background: #fff;
-      padding: 1.5em;
+      padding: 1em;
       border-radius: 6px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      border-left: 4px solid #007bff;
+      border-top: 4px solid #007bff;
     }
-
-    .load-case-card h4 {
+    
+    .load-card h4 {
       margin-top: 0;
       color: #007bff;
+      margin-bottom: 0.5em;
+    }
+    
+    .load-card p {
+      margin: 0.2em 0;
+      font-size: 0.9em;
     }
   </style>
 </head>
@@ -163,110 +170,89 @@
 
   <main>
     <header class="hero">
-      <img src="bracket-hero.png" alt="Topology Optimized Engine Loading Bracket" />
+      <img src="bracket-hero.png" alt="Topology Optimized Aircraft Engine Loading Bracket" />
       <h1>Aircraft Engine Loading Bracket Topology Optimization</h1>
-      <div class="meta">MANE 4600U • Ontario Tech University • Individual Project</div>
+      <div class="meta">Role: Solo • Tools: ANSYS Workbench • Focus: FEA & Optimization</div>
     </header>
 
     <section>
-      <h2>Executive Summary</h2>
+      <h2>Overview</h2>
       <p>
-        This project details the structural analysis and topology optimization of an aircraft engine loading bracket intended for Fused Deposition Modeling (FDM) manufacturing. The primary objective was to achieve a 50% reduction in weight while maintaining structural integrity across four distinct flight and operational load cases. The optimization and validation were performed using ANSYS Workbench.
+        I performed structural analysis and topology optimization on an aircraft engine loading bracket designed for Fused Deposition Modeling (FDM) manufacturing. The primary objective was to cut the component's weight by 50% without compromising its structural integrity. Using ANSYS Workbench, I evaluated the bracket under four distinct flight and operational load cases, eventually generating a highly optimized, organic geometry that safely handles extreme forces.
       </p>
     </section>
 
     <section>
-      <h2>Methodology & Simulation Setup</h2>
-      <table class="spec-table">
-        <tr><th>Software Used</th><td>ANSYS Workbench</td></tr>
-        <tr><th>Manufacturing Constraint</th><td>Fused Deposition Modeling (FDM)</td></tr>
-        <tr><th>Optimization Target</th><td>50% Total Weight Reduction</td></tr>
-        <tr><th>Boundary Conditions</th><td>Fixed condition applied to all interface mounting holes</td></tr>
-      </table>
+      <h2>Key Design Highlights</h2>
+      <ul>
+        <li><strong>Rigorous Load Testing:</strong> Evaluated the bracket against four independent static load cases (Vertical, Horizontal, Off-Axis, and Torsional) with forces up to 9,500 lbs and moments up to 5,000 lb-in applied directly to the pin geometry.</li>
+        <li><strong>Iterative Optimization Weighting:</strong> Discovered that the vertical load case generated significantly higher maximum stress (99.9 ksi). To prevent yielding in the final design, I iteratively increased this load case's solver weight by a factor of 5 during the optimization process.</li>
+        <li><strong>Massive Weight Reduction:</strong> Successfully exceeded the project target by achieving a <strong>51.1% mass reduction</strong>, dropping the bracket's weight from 4.52 lbs down to just 2.31 lbs.</li>
+        <li><strong>Structural Validation:</strong> Re-simulated the smoothed, optimized geometry against all original load cases to confirm it would not yield. I determined that the lowest factor of safety was 1.14, noting that future iterations for real-world aerospace applications would target a minimum 1.5 FOS to account for dynamic loading and FDM material anisotropy.</li>
+      </ul>
     </section>
 
     <section>
-      <h2>Optimization Results</h2>
-      <p>
-        The topology optimization solver was run targeting a 50% mass reduction. Due to the significantly higher maximum stress in Load Case 1, its objective weight was iteratively increased to 5 to ensure the final geometry would not yield.
-      </p>
-      <table class="spec-table">
-        <tr><th>Final Mass Reduction</th><td>51.1% (Reduced from 4.52 lbs to 2.31 lbs)</td></tr>
-        <tr><th>Final Volume Reduction</th><td>51.1% (Reduced from 28.27 in³ to 14.44 in³)</td></tr>
-        <tr><th>Minimum Factor of Safety</th><td>1.14 (Occurs during Load Case 1)</td></tr>
-      </table>
-    </section>
-
-    <section>
-      <h2>Applied Load Cases & Structural Validation</h2>
-      <p>Four independent static structural load cases were evaluated with forces applied directly to the pin hole geometry. The optimized geometry was validated against these cases to ensure yielding would not occur.</p>
-      
-      <div class="load-cases">
-        <div class="load-case-card">
-          <h4>Load Case 1 (Vertical)</h4>
-          <p><strong>Load:</strong> 8,000 lbs Upward</p>
-          <p><strong>Original Max Stress:</strong> 99.9 ksi</p>
-          <p><strong>Optimized Max Stress:</strong> 115 ksi</p>
+      <h2>Load Case Validation (Optimized Geometry)</h2>
+      <div class="load-case-grid">
+        <div class="load-card">
+          <h4>Case 1: Vertical</h4>
+          <p><strong>Load:</strong> 8,000 lbs (Up)</p>
+          <p><strong>Max Stress:</strong> 115.0 ksi</p>
           <p><strong>Factor of Safety:</strong> 1.14</p>
         </div>
-        <div class="load-case-card">
-          <h4>Load Case 2 (Horizontal)</h4>
-          <p><strong>Load:</strong> 8,500 lbs to the Right</p>
-          <p><strong>Original Max Stress:</strong> 62.9 ksi</p>
-          <p><strong>Optimized Max Stress:</strong> 69.8 ksi</p>
+        <div class="load-card">
+          <h4>Case 2: Horizontal</h4>
+          <p><strong>Load:</strong> 8,500 lbs (Right)</p>
+          <p><strong>Max Stress:</strong> 69.8 ksi</p>
           <p><strong>Factor of Safety:</strong> 1.88</p>
         </div>
-        <div class="load-case-card">
-          <h4>Load Case 3 (Off-Axis)</h4>
-          <p><strong>Load:</strong> 9,500 lbs @ 42° relative to vertical</p>
-          <p><strong>Original Max Stress:</strong> 51.0 ksi</p>
-          <p><strong>Optimized Max Stress:</strong> 70.0 ksi</p>
+        <div class="load-card">
+          <h4>Case 3: Off-Axis</h4>
+          <p><strong>Load:</strong> 9,500 lbs (@ 42°)</p>
+          <p><strong>Max Stress:</strong> 70.0 ksi</p>
           <p><strong>Factor of Safety:</strong> 1.87</p>
         </div>
-        <div class="load-case-card">
-          <h4>Load Case 4 (Torsional)</h4>
-          <p><strong>Load:</strong> 5,000 lb-in Clockwise Moment</p>
-          <p><strong>Original Max Stress:</strong> 51.6 ksi</p>
-          <p><strong>Optimized Max Stress:</strong> 52.7 ksi</p>
+        <div class="load-card">
+          <h4>Case 4: Torsional</h4>
+          <p><strong>Load:</strong> 5,000 lb-in (CW)</p>
+          <p><strong>Max Stress:</strong> 52.7 ksi</p>
           <p><strong>Factor of Safety:</strong> 2.48</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Conclusion & Recommendations</h2>
-      <p>
-        The topology optimization successfully resulted in a final mass of 2.31 lbs, surpassing the goal with a highly efficient 51.1% weight reduction. Structural validation confirms that the part will not yield under the prescribed load cases. However, for real-world aerospace applications, a minimum factor of safety of around 1.5 is recommended to account for dynamic loading and the inherent material anisotropy of FDM printing. Future iterations should prioritize meeting this structural threshold over a strict mass reduction target.
-      </p>
+      <h2>Technical Specifications</h2>
+      <table class="spec-table">
+        <tr><th>Software</th><td>ANSYS Workbench</td></tr>
+        <tr><th>Manufacturing Constraint</th><td>Fused Deposition Modeling (FDM)</td></tr>
+        <tr><th>Original Mass</th><td>4.52 lbs (28.27 in³)</td></tr>
+        <tr><th>Optimized Mass</th><td>2.31 lbs (14.44 in³)</td></tr>
+        <tr><th>Total Weight Reduction</th><td>51.1%</td></tr>
+      </table>
     </section>
 
     <section>
       <h2>Gallery</h2>
       <div class="gallery-grid">
         <figure>
-          <img src="bracket-cad.png" alt="CAD Model of the Engine Loading Bracket" />
-          <figcaption>Original CAD Model</figcaption>
+          <img src="bracket-original-cad.png" alt="Original CAD Model of the Engine Loading Bracket" />
+          <figcaption>Original Bracket CAD Model</figcaption>
         </figure>
         <figure>
-          <img src="bracket-optimized.png" alt="Smoothed Topology Optimized Loading Bracket" />
+          <img src="bracket-boundary.png" alt="ANSYS Boundary Conditions on Bolt Holes" />
+          <figcaption>Fixed Boundary Conditions</figcaption>
+        </figure>
+        <figure>
+          <img src="bracket-smoothed.png" alt="Smoothed Topology Optimized Loading Bracket" />
           <figcaption>Smoothed Optimized Geometry</figcaption>
         </figure>
         <figure>
-          <img src="bracket-meshed.png" alt="Meshed Loading Bracket" />
-          <figcaption>Optimized Mesh Model</figcaption>
-        </figure>
-        <figure>
-          <img src="bracket-lc1.png" alt="Topology Optimized Load Case 1 FEA Solution" />
-          <figcaption>FEA Solution: Load Case 1 (Max Stress: 115 ksi)</figcaption>
+          <img src="bracket-fea-result.png" alt="Topology Optimized Load Case 1 FEA Solution" />
+          <figcaption>Validated FEA Solution (Case 1)</figcaption>
         </figure>
       </div>
-    </section>
-
-    <section>
-      <h2>Project Reports</h2>
-      <ul>
-        <li><a href="topology-optimization-report.pdf" target="_blank">View the Detailed Optimization Report (PDF)</a></li>
-      </ul>
     </section>
 
     <a class="back" href="index.html">← Back to Portfolio</a>
