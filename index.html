@@ -80,9 +80,11 @@
       }
 .project-image {
   width: 100%;
-  height: auto; /* Let the image breathe */
-  aspect-ratio: 4 / 3; /* Or 16/9, depending on your render dimensions */
-  object-fit: cover; 
+  height: 100%; /* Matches the height of the text column */
+  min-height: 300px; /* Gives taller renders the breathing room they need */
+  object-fit: contain; /* GUARANTEES zero cropping */
+  object-position: center; /* Keeps the render perfectly centered */
+  background-color: var(--card); /* Blends any empty space seamlessly */
   display: block;
   margin: 0;
 }
