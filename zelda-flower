@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zelda Silent Princess Replica</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #222;
+      background: linear-gradient(#fafafa, #eaeaea);
+    }
+
+    nav {
+      background: #2f343a;
+      padding: 1em;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 1em;
+      text-decoration: none;
+      color: #aaa;
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: #fff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 1em;
+    }
+
+    header.hero {
+      text-align: center;
+      padding: 2em 1em 3em;
+      background: linear-gradient(135deg, #e3f2fd, #f5f5f5);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 2em;
+    }
+
+    .hero img {
+      max-width: 300px;
+      width: 80%;
+      height: auto;
+      margin: 0 auto 1em;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      transition: transform 0.2s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 1.5em;
+      margin: 2em 0;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      background: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .gallery-grid figcaption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 0.5em;
+      text-align: center;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 1.5em;
+      font-size: 0.9em;
+    }
+
+    h1 {
+      margin-bottom: 0.4em;
+    }
+
+    .meta {
+      color: #666;
+      font-size: 0.95em;
+      margin-bottom: 1em;
+    }
+
+    .spec-table {
+      width: 100%;
+      margin: 1.5em 0;
+      border-collapse: collapse;
+    }
+
+    .spec-table th, .spec-table td {
+      border: 1px solid #ccc;
+      padding: 0.75em 1em;
+      text-align: left;
+    }
+
+    .spec-table th {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="https://www.linkedin.com/in/william-nagassar-903395218/" target="_blank">LinkedIn</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <img src="silent-princess-hero.png" alt="3D Printed Zelda Silent Princess Replica Collage" />
+      <h1>Zelda Silent Princess Replica</h1>
+      <div class="meta">Role: Solo • Tools: Blender, Painting, CAD • Focus: Organic Modeling</div>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        To create a special gift for a big fan of <em>The Legend of Zelda</em>, I decided to bring their favorite in-game flower, the Silent Princess, to life. I modeled a highly detailed, organic replica of the flower from scratch, successfully navigated complex 3D printing challenges, and hand-finished the piece using custom-mixed acrylic and glow-in-the-dark paints to capture its magical aesthetic.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Design & Manufacturing Highlights</h2>
+      <ul>
+        <li><strong>Organic Modeling Workflow:</strong> Started by blocking out the flower using basic primitives (similar to traditional CAD workflows), then utilized Blender’s sculpting tools to add lifelike details, curvature, and organic imperfections to the leaves and petals.</li>
+        <li><strong>Overcoming Printing Instability:</strong> The tall, slender cylinder shape of the stem created an extremely high moment arm. This caused the print to struggle against inertia and nozzle nudging on the higher layers due to limited bed adhesion. A large brim proved insufficient to preserve maximum print quality.</li>
+        <li><strong>Magnetic Joint Engineering:</strong> To solve the moment arm issue, I imported the mesh into CAD software, split the flower in half across the stem, and designed cavities to insert and superglue magnets to each end.</li>
+        <li><strong>Iterative Efficiency:</strong> Splitting the model not only solved the stability issue but allowed me to rapidly iterate and reprint just the complex top half of the flower without wasting time and material on the base.</li>
+        <li><strong>Post-Processing & Finishing:</strong> Hand-painted the final printed pieces to match the exact color palette from the game, utilizing glow-in-the-dark blue paint for specific accents to replicate the flower's signature bioluminescence.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technical Specifications</h2>
+      <table class="spec-table">
+        <tr><th>Modeling Software</th><td>Blender (Sculpting & Organic Modeling), CAD (Splitting)</td></tr>
+        <tr><th>Manufacturing Method</th><td>Fused Deposition Modeling (FDM)</td></tr>
+        <tr><th>Assembly Mechanism</th><td>Internal superglued magnetic joint</td></tr>
+        <tr><th>Post-Processing</th><td>Sanding and hand-painting</td></tr>
+        <tr><th>Finishes Used</th><td>Standard Acrylics & Glow-in-the-Dark Blue Paint</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <figure>
+          <img src="princess-blender.png" alt="Blender sculpt of the Silent Princess flower" />
+          <figcaption>Organic Sculpting in Blender</figcaption>
+        </figure>
+        <figure>
+          <img src="princess-painted-stem.png" alt="Painting the 3D printed base and stem" />
+          <figcaption>Hand-Painting the Printed Base</figcaption>
+        </figure>
+        <figure>
+          <img src="princess-dome.png" alt="Final assembled and painted flower inside a decorative glass dome" />
+          <figcaption>Final Piece in Decorative Display Dome</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <a class="back" href="index.html">← Back to Portfolio</a>
+  </main>
+</body>
+</html>
